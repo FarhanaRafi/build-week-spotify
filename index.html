@@ -114,45 +114,52 @@
                     <h3>Recently Played</h3>
                     <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="recent-played">
                     </div>
-                    <!-- <div class="recent-played">
+                </div>
+                <!-- <div class="recent-played">
                         <div class="col-12">
                             <h5>Recently played</h5>
                             <div>Cards</div>
                         </div>
                     </div> -->
-                    <!-- 
+                <!-- 
                     <div class="shows-to-try">
                         <div class="col-12">
                             <h5>Shows to try</h5>
                             <span>Podcasts we think you'll got hooked on.</span>
                             <div>Cards</div>
                         </div> -->
-                    <div class="container">
-                        <h3>Shows to try</h3>
-                        <span>Podcasts we think you'll got hokked on.</span>
-                        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="show-to-try">
-                        </div>
-
-
-
+                <div class="container">
+                    <h3>Shows to try</h3>
+                    <span>Podcasts we think you'll got hokked on.</span>
+                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="show-to-try">
                     </div>
                 </div>
+
+                <div class="container">
+                    <h3>Spotify Original & Exclusives</h3>
+                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="spotify">
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <div class="col-12 bg-dark music-player">
+    <div class="col-12 music-player">
         <div class="song-bar">
             <div class="song-infos">
                 <div class="image-container">
-                    <img src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
+                    <img id="album-art" src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
                         alt="" />
                 </div>
                 <div class="song-description">
-                    <p class="title">
+                    <p id="album-title" class="title">
                         Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
                     </p>
-                    <p class="artist">Masaru Yokoyama</p>
+                    <p id="album-artist" class="artist">
+                        Masaru Yokoyama
+
+                    </p>
                 </div>
             </div>
             <div class="icons">
@@ -169,11 +176,15 @@
                 <i class="fas fa-undo-alt"></i>
             </div>
             <div class="progress-container">
-                <span>0:49</span>
+                <span id="time-over">
+                    0:49
+                </span>
                 <div class="progress-bar">
                     <div class="progress"></div>
                 </div>
-                <span>3:15</span>
+                <span id="time-remaining">
+                    3:15
+                </span>
             </div>
         </div>
         <div class="other-features">

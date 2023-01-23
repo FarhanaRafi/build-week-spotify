@@ -5,11 +5,12 @@ body{
 }
 .card{
     border: none;
+    border-radius: 20px;
 }
 
 
 .card img{
-    padding: 6px;
+    padding: 7px;
     background-color: rgb(27, 27, 27);
 }
 .card-body{
@@ -55,7 +56,7 @@ body{
     --secondary-color: #999;
     --green-color: #2d5;
     --padding: 1em;
-    background-color: #111;
+    background-color: rgb(28, 27, 27);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,7 +163,7 @@ i:hover{
     height: 100%;
     width: 30%;
     border-radius: 10px;
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
 }
 .progress-bar:hover .progress{
     background-color: var(--green-color);
@@ -204,6 +205,26 @@ i:hover{
 
 .good-morning-content {
   border: solid 1px black;
+}
+
+.play-btn-container{
+ position: relative;
+}
+.play-btn{
+    position: absolute;
+    font-size: 34px;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+    background-color: transparent;
+}
+.card:hover .play-btn{
+    position: absolute;
+    font-size: 44px;
+    bottom: 0;
+    right: 0;
+    visibility: visible;
+    background-color: transparent;  
 }
 
 
