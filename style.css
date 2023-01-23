@@ -297,6 +297,7 @@ i:hover{
 
 .play-btn-container{
  position: relative;
+ background-color: transparent;
 }
 .play-btn{
     position: absolute;

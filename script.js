@@ -34,7 +34,7 @@ const renderCards = (tracks, section, playable) => {
           <img src="${track.album.cover_medium}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${track.album.title}</h5>
-            <p class="card-text">${track.artist.name}</p>
+            <p class="card-text text-muted mt-n2 "><small>${track.artist.name}</small></p>
           </div>
         </div>
       </div>`;
@@ -46,11 +46,11 @@ const renderCards = (tracks, section, playable) => {
         <div class="card h-100" id="${track.album.id}">
         <div class="play-btn-container">
           <img src="${track.album.cover_medium}" class="card-img-top" alt="...">
-          <span class="play-btn text-success" onclick ="playTrack(${track.id})"><i class="bi bi-play-circle-fill"></i></span>
+          <span class="play-btn text-success bg-transparent" onclick ="playTrack(${track.id})"><i class="bi bi-play-circle-fill"></i></span>
         </div>
           <div class="card-body">
             <h5 class="card-title">${track.album.title}</h5>
-            <p class="card-text">${track.artist.name}</p>
+            <p class="card-text text-muted mt-n2"><small>${track.artist.name}</small></p>
           </div>
         </div>
       </div>`;
