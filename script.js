@@ -23,7 +23,7 @@ const renderCards = (tracks, section) => {
   container.innerHTML = trackCards.join("");
 };
 
-const getSection = async (searchQuery, section) => {
+const getTrackDetails = async (searchQuery) => {
   try {
     let res = await fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
@@ -31,10 +31,15 @@ const getSection = async (searchQuery, section) => {
       options
     );
     let tracks = await res.json();
-    renderCards(tracks.data.slice(0, 5), section);
+    return tracks.data;
   } catch (err) {
     console.log(err);
   }
+};
+
+const getSection = async (searchQuery, section) => {
+  let tracks = await getTrackDetails(searchQuery);
+  renderCards(tracks.slice(0, 5), section);
 };
 
 const onCardClick = (event) => {
@@ -45,7 +50,7 @@ const onCardClick = (event) => {
 
 const loadSections = () => {
   getSection("2022", "recent-played");
-  getSection("indian", "show-to-try");
+  getSection("podcasts", "show-to-try");
 };
 
 window.onload = loadSections();
