@@ -1,36 +1,50 @@
-body{
-    height: 100vh;
-    color: white;
+body {
+  height: 100vh;
+  color: white;
 }
 
-.page-wrapper{
-    height: 88vh;
-    background-color: rgb(75, 18, 18);
+.page-wrapper {
+  height: 88vh;
+  background-color: rgb(75, 18, 18);
 }
 
-.side-bar{
-    position: sticky;
-    z-index:1;
-    top: 0;
-    height: 88vh;
+.side-bar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 88vh;
 }
 
-.top-bar{
-    height:8vh;
+.top-bar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 8vh;
 }
 
-.good-morning{
-    height: 22vh;
+.user-img {
+  width: 20px;
+  border-radius: 50%;
 }
 
-.recent-played{
-    height: 30vh;
+.username-btn {
 }
 
-.shows-to-try{
-    height: 30vh;
+.good-morning {
+  height: 22vh;
 }
 
-.music-player{
-    height: 12vh;
+.good-morning-content {
+  border: solid 1px black;
+}
+.recent-played {
+  height: 30vh;
+}
+
+.shows-to-try {
+  height: 30vh;
+}
+
+.music-player {
+  height: 12vh;
 }
