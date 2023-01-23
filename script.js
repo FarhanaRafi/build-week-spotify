@@ -61,13 +61,43 @@ const renderCards = (tracks, section, playable) => {
 };
 
 const playTrack = (trackId) => {
+  selectedTrackIndex = globalTracks.findIndex((track) => track.id === trackId);
+  let selectedTrack = globalTracks[selectedTrackIndex];
+  loadTrack(selectedTrack);
+};
+
+const onClickNext = () => {
+  selectedTrackIndex++;
+  let selectedTrack = globalTracks[selectedTrackIndex];
+  loadTrack(selectedTrack);
+};
+
+const onClickPrev = () => {
+  selectedTrackIndex--;
+  let selectedTrack = globalTracks[selectedTrackIndex];
+  loadTrack(selectedTrack);
+};
+
+const onPlayPause = (event) => {
+  let button = event.target;
+  if (button.classList.contains("fa-play")) {
+    button.classList.remove("fa-play");
+    button.classList.add("fa-pause");
+    loadTrack(globalTracks[selectedTrackIndex]);
+  } else {
+    button.classList.remove("fa-pause");
+    button.classList.add("fa-play");
+    audioPlayer.pause();
+  }
+};
+
+const loadTrack = (selectedTrack) => {
   let image = document.getElementById("album-art");
   let title = document.getElementById("album-title");
   let artistName = document.getElementById("album-artist");
   let time = document.getElementById("time-over");
   let duration = document.getElementById("time-remaining");
-  selectedTrackIndex = globalTracks.findIndex((track) => track.id === trackId);
-  let selectedTrack = globalTracks[selectedTrackIndex];
+
   image.src = selectedTrack.album.cover_small;
   title.innerText = selectedTrack.album.title;
   artistName.innerText = selectedTrack.artist.name;
@@ -78,6 +108,9 @@ const playTrack = (trackId) => {
     audioPlayer.pause();
   }
 
+  let button = document.getElementById("play-pause-btn");
+  button.classList.remove("fa-play");
+  button.classList.add("fa-pause");
   audioPlayer = new Audio(selectedTrack.preview);
   audioPlayer.play();
 };
@@ -108,14 +141,13 @@ const getSection = async (searchQuery, section, playable) => {
 };
 
 const onCardClick = (event) => {
-  console.log(event);
   let selectedAlbumId = event.target.closest(".card").id;
   window.location.href = `./album.html?id=${selectedAlbumId}`;
 };
 
 const loadSections = async () => {
   getSection("pop", "recent-played", false);
-  getSection("podcasts", "show-to-try", false);
+  getSection("podcasts", "show-to-try", true);
   getSection("mix", "spotify", true);
 
   const goodMorningTracks = await getTrackDetails("hits");
