@@ -6,6 +6,21 @@ const options = {
   },
 };
 let songs = [];
+
+const getTrackDetails = async (searchQuery) => {
+  try {
+    let res = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
+        searchQuery,
+      options
+    );
+    let tracks = await res.json();
+    return tracks.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const renderCards = (tracks, section) => {
   let container = document.getElementById(section);
   let trackCards = tracks.map((track) => {
@@ -21,20 +36,6 @@ const renderCards = (tracks, section) => {
   });
 
   container.innerHTML = trackCards.join("");
-};
-
-const getTrackDetails = async (searchQuery) => {
-  try {
-    let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-        searchQuery,
-      options
-    );
-    let tracks = await res.json();
-    return tracks.data;
-  } catch (err) {
-    console.log(err);
-  }
 };
 
 const getSection = async (searchQuery, section) => {
