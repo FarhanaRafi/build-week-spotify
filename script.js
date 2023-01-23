@@ -16,7 +16,6 @@ const getTrackDetails = async (searchQuery) => {
     );
     let tracks = await res.json();
     console.log(tracks);
-    renderGoodMorning(tracks.data);
     return tracks.data;
   } catch (err) {
     console.log(err);
@@ -71,8 +70,8 @@ const playTrack = (trackId) => {
   title.innerText = selectedTrack.album.title;
   artistName.innerText = selectedTrack.artist.name;
   duration.innerText = selectedTrack.duration;
-   console.log(selectedTrack);
-}
+  console.log(selectedTrack);
+};
 
 const renderGoodMorning = (arrayOfSongs) => {
   let container = document.querySelector(".good-morning-div");
@@ -98,10 +97,13 @@ const onCardClick = (event) => {
   window.location.href = `./album.html?id=${selectedAlbumId}`;
 };
 
-const loadSections = () => {
+const loadSections = async () => {
   getSection("pop", "recent-played", false);
   getSection("podcasts", "show-to-try", false);
   getSection("mix", "spotify", true);
+
+  const goodMorningTracks = await getTrackDetails("hits");
+  renderGoodMorning(goodMorningTracks);
 };
 
 window.onload = () => {
