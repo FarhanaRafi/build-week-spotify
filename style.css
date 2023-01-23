@@ -1,0 +1,33 @@
+body{
+    height: 100vh;
+    color: white;
+}
+
+.page-wrapper{
+    height: 88vh;
+    background-color: rgb(75, 18, 18);
+}
+
+.side-bar{
+    height: 88vh;
+}
+
+.top-bar{
+    height:8vh;
+}
+
+.good-morning{
+    height: 22vh;
+}
+
+.recent-played{
+    height: 30vh;
+}
+
+.shows-to-try{
+    height: 30vh;
+}
+
+.music-player{
+    height: 12vh;
+}
