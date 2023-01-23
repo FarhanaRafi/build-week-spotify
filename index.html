@@ -15,17 +15,94 @@
     <body>
         <div class="container-fluid page-wrapper">
             <div class="row">
-                <div class="col-1 bg-dark d-flex side-bar">Side Bar</div>
-                <div class="container col-11">
-                    <div class="col-12 top-bar">Button and User</div>
+                <div class="col-2 bg-dark d-block side-bar row">
 
-                    <div class="good-morning">
-                        <div class="col-12">
-                            <h3>Good Morning</h3>
+                    <img class="logo col-9" src="/assets/Spotify_Logo.png" alt="">
+                    <div class="container">
+
+                        <div>
+                            <i class="bi bi-house-door-fill"></i>
+                            Home
                         </div>
-                        <div class="col-12">Small Cards</div>
+                        <div>
+                            <i class="bi bi-search"></i>
+                            Search
+                        </div>
+                        <div>
+                            <i class="bi bi-music-note-list"></i>
+                            Your Library
+                        </div>
+                        <div>
+                            <i class="bi bi-plus-square-fill"></i>
+                            Create Playlist
+                        </div>
+                        <div>
+                            <i class="bi bi-heart-fill"></i>
+                            Liked Songs
+                        </div>
+
+                        <hr>
                     </div>
 
+
+                </div>
+                <div class="container col-10">
+                    <div class="col-12 d-flex top-bar justify-content-between align-items-center">
+                        <div class="topbar-btn-col row d-flex justify-content-between">
+                            <div class="col-1 d-flex align-items-center">
+                                <i class="bi bi-arrow-left-circle"></i>
+                            </div>
+                            <div class="col-1 d-flex align-items-center">
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </div>
+                            <div class="search-bar row col">
+                                <div class="input-group flex-nowrap">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="addon-wrapping">
+                                            <i class="bi bi-search"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="What do you want to listen to?" aria-label="Username" aria-describedby="addon-wrapping">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="topbar-user row">
+                            <div class="btn-group username-btn">
+                                <button type="button" class="btn btn-dark">
+                                    <img class="user-img" src="/assets/avatar.png" alt="">
+                                    Username
+                                </button>
+                                <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="container px-0 mx-0">
+
+                        <div class="row col-12 good-morning">
+                            <div class="col-12 d-flex align-items-center">
+                                <h3>Good Morning</h3>
+                            </div>
+                            <div class="container">
+                                <div class="col-2 p-0 good-morning-content d-flex align-items-center">
+                                    <img class="col-5 pl-0 good-morning-img " src="/assets/avatar.png" alt="">
+                                    <div>Singer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
                     <div class="recent-played">
                         <div class="col-12">
                             <h5>Recently played</h5>
@@ -36,7 +113,7 @@
                     <div class="shows-to-try">
                         <div class="col-12">
                             <h5>Shows to try</h5>
-                            <span>Podcasts we think you'll got hokked on.</span>
+                            <span>Podcasts we think you'll got hooked on.</span>
                             <div>Cards</div>
                         </div>
                     </div>
