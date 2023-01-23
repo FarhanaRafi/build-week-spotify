@@ -10,114 +10,132 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div class="container-fluid page-wrapper">
         <div class="row">
-            <div class="col-1 bg-dark d-flex side-bar">Side Bar</div>
-            <div class="container col-10">
-                <div class="col-12 top-bar">Button and User</div>
+            <div class="col-2 bg-dark d-block side-bar row">
+
+                <img class="logo col-9" src="/assets/Spotify_Logo.png" alt="">
                 <div class="container">
-                    <div class="good-morning">
-                        <div class="col-12">
-                            <h3>Good Morning</h3>
-                        </div>
-                        <div class="col-12">Small Cards</div>
+
+                    <div>
+                        <i class="bi bi-house-door-fill"></i>
+                        Home
+                    </div>
+                    <div>
+                        <i class="bi bi-search"></i>
+                        Search
+                    </div>
+                    <div>
+                        <i class="bi bi-music-note-list"></i>
+                        Your Library
+                    </div>
+                    <div>
+                        <i class="bi bi-plus-square-fill"></i>
+                        Create Playlist
+                    </div>
+                    <div>
+                        <i class="bi bi-heart-fill"></i>
+                        Liked Songs
                     </div>
 
-                    <!-- <div class="container"> -->
-                        <h3>Recently Played</h3>
-                        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="recent-played">
+                    <hr>
+                </div>
+
+
+
+            </div>
+            <div class="container col-10">
+                <div class="col-12 d-flex top-bar justify-content-between align-items-center">
+                    <div class="topbar-btn-col row d-flex justify-content-between">
+                        <div class="col-1 d-flex align-items-center">
+                            <i class="bi bi-arrow-left-circle"></i>
+                        </div>
+                        <div class="col-1 d-flex align-items-center">
+                            <i class="bi bi-arrow-right-circle"></i>
+                        </div>
+                        <div class="search-bar row col">
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping">
+                                        <i class="bi bi-search"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="What do you want to listen to?"
+                                    aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
 
                         </div>
-                        <!-- <div class="col-12">
-                            <h5>Recently played</h5>
-                            <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5">
-                                <div class="col mb-4">
-                                  <div class="card h-100">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col mb-4">
-                                  <div class="card h-100">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text">This is a short card.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col mb-4">
-                                  <div class="card h-100">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col mb-4">
-                                  <div class="card h-100">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col mb-4">
-                                    <div class="card h-100">
-                                      <img src="..." class="card-img-top" alt="...">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col mb-4">
-                                    <div class="card h-100">
-                                      <img src="..." class="card-img-top" alt="...">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col mb-4">
-                                    <div class="card h-100">
-                                      <img src="..." class="card-img-top" alt="...">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                              </div>
-                        </div> -->
-                    <!-- </div> -->
+                    </div>
+                    <div class="topbar-user row">
+                        <div class="btn-group username-btn">
+                            <button type="button" class="btn btn-dark">
+                                <img class="user-img" src="/assets/avatar.png" alt="">
+                                Username
+                            </button>
+                            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </div>
+                    </div>
 
-                    <!-- <div class="container"> -->
+                </div>
+
+                <div class="container px-0 mx-0">
+
+                    <div class="row col-12 good-morning">
+                        <div class="col-12 d-flex align-items-center">
+                            <h3>Good Morning</h3>
+                        </div>
+                        <div class="container">
+                            <div class="col-2 p-0 good-morning-content d-flex align-items-center">
+                                <img class="col-5 pl-0 good-morning-img " src="/assets/avatar.png" alt="">
+                                <div>Singer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Recently Played</h3>
+                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="recent-played">
+                    </div>
+                    <!-- <div class="recent-played">
+                        <div class="col-12">
+                            <h5>Recently played</h5>
+                            <div>Cards</div>
+                        </div>
+                    </div> -->
+                    <!-- 
+                    <div class="shows-to-try">
+                        <div class="col-12">
+                            <h5>Shows to try</h5>
+                            <span>Podcasts we think you'll got hooked on.</span>
+                            <div>Cards</div>
+                        </div> -->
+                    <div class="container">
                         <h3>Shows to try</h3>
                         <span>Podcasts we think you'll got hokked on.</span>
                         <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="show-to-try">
-
                         </div>
 
 
-                    <!-- </div> -->
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,7 +145,8 @@
         <div class="song-bar">
             <div class="song-infos">
                 <div class="image-container">
-                    <img src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg" alt="" />
+                    <img src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
+                        alt="" />
                 </div>
                 <div class="song-description">
                     <p class="title">
@@ -167,8 +186,7 @@
                 </div>
             </div>
         </div>
-        
-        Music Player</div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -178,4 +196,5 @@
         crossorigin="anonymous"></script>
     <script src="./script.js"></script>
 </body>
+
 </html>

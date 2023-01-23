@@ -1,6 +1,7 @@
 body{
     background-color: black;
     color: white;
+  height: 100vh;
 }
 .card{
     border: none;
@@ -27,40 +28,25 @@ body{
     width: 100%;
 }
 
-/* .page-wrapper{
-    height: 88vh;
-    background-color: rgb(75, 18, 18);
-} */
-
 .side-bar{
+    position: sticky;
+    z-index: 1;
+    top: 0;
     height: 88vh;
-    position: fixed;
-    left: 0;
 }
 
-.top-bar{
-    height:8vh;
+.top-bar {
+  position: sticky;
+  background-color: #111;
+  z-index: 1;
+  top: 0;
+  height: 8vh;
 }
 
-.good-morning{
-    height: 22vh;
+.user-img {
+  width: 20px;
+  border-radius: 50%;
 }
-
-/* .recent-played{
-    height: 30vh;
-} */
-
-
-/* .shows-to-try{
-    height: 30vh;
-} */
-
-/* .music-player{
-    height: 12vh;
-    position: fixed;
-    bottom: 0;
-} */
-
 
 .music-player {
     position: fixed;
@@ -73,11 +59,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position: relative; */
-
-    height: 7rem;
+    height: 15vh;
     padding: var(--padding);
     color: var(--primary-color);
+    z-index: 1;
 }
 i{
     color: var(--secondary-color);
@@ -211,3 +196,14 @@ i:hover{
 .volume-bar .progress-bar:hover .progress::after{
     --size: .8em;
 }
+
+
+.good-morning {
+  height: 22vh;
+}
+
+.good-morning-content {
+  border: solid 1px black;
+}
+
+
