@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Spotify-Home</title>
-        <link rel="stylesheet" href="normalise.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="./style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify-Home</title>
+    <link rel="stylesheet" href="normalise.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
 
-    <body>
-        <div class="container-fluid page-wrapper">
-            <div class="row">
-                <div class="col-1 bg-dark d-flex side-bar">Side Bar</div>
-                <div class="container col-11">
-                    <div class="col-12 top-bar">Button and User</div>
-
+<body>
+    <div class="container-fluid page-wrapper">
+        <div class="row">
+            <div class="col-1 bg-dark d-flex side-bar">Side Bar</div>
+            <div class="container col-11">
+                <div class="col-12 top-bar">Button and User</div>
+                <div class="container">
                     <div class="good-morning">
                         <div class="col-12">
                             <h3>Good Morning</h3>
@@ -26,29 +27,104 @@
                         <div class="col-12">Small Cards</div>
                     </div>
 
-                    <div class="recent-played">
-                        <div class="col-12">
-                            <h5>Recently played</h5>
-                            <div>Cards</div>
-                        </div>
-                    </div>
+                    <!-- <div class="container"> -->
+                        <h3>Recently Played</h3>
+                        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="recent-played">
 
-                    <div class="shows-to-try">
-                        <div class="col-12">
-                            <h5>Shows to try</h5>
-                            <span>Podcasts we think you'll got hokked on.</span>
-                            <div>Cards</div>
                         </div>
-                    </div>
+                        <!-- <div class="col-12">
+                            <h5>Recently played</h5>
+                            <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5">
+                                <div class="col mb-4">
+                                  <div class="card h-100">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col mb-4">
+                                  <div class="card h-100">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">This is a short card.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col mb-4">
+                                  <div class="card h-100">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col mb-4">
+                                  <div class="card h-100">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col mb-4">
+                                    <div class="card h-100">
+                                      <img src="..." class="card-img-top" alt="...">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col mb-4">
+                                    <div class="card h-100">
+                                      <img src="..." class="card-img-top" alt="...">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col mb-4">
+                                    <div class="card h-100">
+                                      <img src="..." class="card-img-top" alt="...">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                        </div> -->
+                    <!-- </div> -->
+
+                    <!-- <div class="container"> -->
+                        <h3>Shows to try</h3>
+                        <span>Podcasts we think you'll got hokked on.</span>
+                        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="show-to-try">
+
+                        </div>
+
+
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="col-12 bg-dark music-player">Music Player</div>
+    <div class="col-12 bg-dark music-player">Music Player</div>
 
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-        <script src="./script.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
 
 </html>

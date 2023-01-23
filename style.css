@@ -1,15 +1,33 @@
 body{
-    height: 100vh;
+    background-color: black;
     color: white;
 }
+.card{
+    border: none;
+}
+.card img{
+    padding: 6px;
+    background-color: rgb(40, 40, 40);;
+}
+.card-body{
+ background-color: rgb(40, 40, 40);
+}
+.card-title, .card-text{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
 
-.page-wrapper{
+/* .page-wrapper{
     height: 88vh;
     background-color: rgb(75, 18, 18);
-}
+} */
 
 .side-bar{
     height: 88vh;
+    position: fixed;
+    left: 0;
 }
 
 .top-bar{
@@ -20,14 +38,17 @@ body{
     height: 22vh;
 }
 
-.recent-played{
+/* .recent-played{
     height: 30vh;
-}
+} */
 
-.shows-to-try{
+
+/* .shows-to-try{
     height: 30vh;
-}
+} */
 
 .music-player{
     height: 12vh;
+    position: fixed;
+    bottom: 0;
 }
