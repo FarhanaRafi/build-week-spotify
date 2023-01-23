@@ -6,7 +6,8 @@ const options = {
   },
 };
 let globalTracks = [];
-
+let audioPlayer = null;
+let selectedTrackIndex = null;
 const getTrackDetails = async (searchQuery) => {
   try {
     let res = await fetch(
@@ -65,12 +66,27 @@ const playTrack = (trackId) => {
   let artistName = document.getElementById("album-artist");
   let time = document.getElementById("time-over");
   let duration = document.getElementById("time-remaining");
-  let selectedTrack = globalTracks.find((track) => track.id === trackId);
+  selectedTrackIndex = globalTracks.findIndex((track) => track.id === trackId);
+  let selectedTrack = globalTracks[selectedTrackIndex];
   image.src = selectedTrack.album.cover_small;
   title.innerText = selectedTrack.album.title;
   artistName.innerText = selectedTrack.artist.name;
-  duration.innerText = selectedTrack.duration;
+  duration.innerText = formatTime(selectedTrack.duration);
   console.log(selectedTrack);
+  console.log(selectedTrack.preview);
+  if (audioPlayer != null) {
+    audioPlayer.pause();
+  }
+
+  audioPlayer = new Audio(selectedTrack.preview);
+  audioPlayer.play();
+};
+
+const formatTime = (duration) => {
+  let minutes = Math.floor(duration / 60);
+  let seconds = duration % 60;
+
+  return `${minutes}:${seconds}`;
 };
 
 const renderGoodMorning = (arrayOfSongs) => {
