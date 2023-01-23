@@ -15,6 +15,8 @@ const getTrackDetails = async (searchQuery) => {
       options
     );
     let tracks = await res.json();
+    console.log(tracks);
+    renderGoodMorning(tracks.data);
     return tracks.data;
   } catch (err) {
     console.log(err);
@@ -57,6 +59,7 @@ const renderCards = (tracks, section, playable) => {
 
   container.innerHTML = trackCards.join("");
 };
+
 const playTrack = (trackId) => {
   let image = document.getElementById("album-art");
   let title = document.getElementById("album-title");
@@ -68,9 +71,22 @@ const playTrack = (trackId) => {
   title.innerText = selectedTrack.album.title;
   artistName.innerText = selectedTrack.artist.name;
   duration.innerText = selectedTrack.duration;
+   console.log(selectedTrack);
+}
 
-  console.log(selectedTrack);
+const renderGoodMorning = (arrayOfSongs) => {
+  let container = document.querySelector(".good-morning-div");
+  container.innerHTML = "";
+  arrayOfSongs.slice(0, 10).forEach((singleSong) => {
+    container.innerHTML += `
+      <div class="col-2 m-3 p-0 good-morning-content d-flex align-items-center">
+      <img class="col-5 pl-0 good-morning-img " src="${singleSong.album.cover_medium}" alt="">
+      <div>${singleSong.artist.name}r</div>
+      </div>
+      `;
+  });
 };
+
 const getSection = async (searchQuery, section, playable) => {
   let tracks = await getTrackDetails(searchQuery);
   renderCards(tracks.slice(0, 5), section, playable);
@@ -88,4 +104,6 @@ const loadSections = () => {
   getSection("mix", "spotify", true);
 };
 
-window.onload = loadSections();
+window.onload = () => {
+  loadSections();
+};
