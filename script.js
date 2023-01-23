@@ -50,8 +50,9 @@ const onCardClick = (event) => {
 };
 
 const loadSections = () => {
-  getSection("2022", "recent-played");
+  getSection("pop", "recent-played");
   getSection("podcasts", "show-to-try");
+  getSection("mix", "spotify");
 };
 
 window.onload = loadSections();
