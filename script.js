@@ -138,7 +138,7 @@ const renderGoodMorning = (arrayOfSongs) => {
     container.innerHTML += `
       <div class="col-2 m-3 p-0 good-morning-content d-flex align-items-center">
       <img class="col-5 pl-0 good-morning-img " src="${singleSong.album.cover_medium}" alt="">
-      <div>${singleSong.artist.name}r</div>
+      <div class-"good-morning-singer">${singleSong.artist.name}r</div>
       </div>
       `;
   });
