@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify-Home</title>
+    <title>Spotify</title>
     <link rel="stylesheet" href="normalise.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/spotify1.ico">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -21,52 +22,46 @@
 <body>
     <div class="container-fluid page-wrapper">
         <div class="row">
-            <div class="col-2 bg-dark d-block side-bar row">
+            <div class="col-2  d-block row">
 
-
-                <img class="logo col-9" src="/assets/Spotify_Logo.png" alt="">
-                <div class="container">
-
-
-                    <div>
-                        <i class="bi bi-house-door-fill"></i>
+                <div class="container d-block side-bar ">
+                <img class="logo col-10 my-3 mt-4" src="/assets/Spotify_Logo.png" alt="">
+                    <button class="my-2 side-bar-text d-block align-items-center">
+                        <i class="bi bi-house-door-fill"></i> 
                         Home
-                    </div>
-                    <div>
-                        <i class="bi bi-search"></i>
+                    </button>
+                    <button class="my-2 side-bar-text side-bar-search d-block">
+                        <i class="bi bi-search"></i> 
                         Search
-                    </div>
-                    <div>
-                        <i class="bi bi-music-note-list"></i>
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-music-note-list"></i> 
                         Your Library
-                    </div>
-                    <div>
-                        <i class="bi bi-plus-square-fill"></i>
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-plus-square-fill"></i> 
                         Create Playlist
-                    </div>
-                    <div>
-                        <i class="bi bi-heart-fill"></i>
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-heart-fill"></i> 
                         Liked Songs
-                    </div>
+                    </button>
 
 
                     <hr>
                 </div>
 
 
-
-
-
-
             </div>
+            
             <div class="container col-10">
-                <div class="col-12 d-flex top-bar justify-content-between align-items-center">
+                <div class="col-12 d-flex top-bar justify-content-between align-items-center ">
                     <div class="topbar-btn-col row d-flex justify-content-between">
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-arrow-left-circle"></i>
+                            <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i> 
                         </div>
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-arrow-right-circle"></i>
+                            <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i> 
                         </div>
                         <div class="search-bar row col">
                             <div class="input-group flex-nowrap">
@@ -82,14 +77,24 @@
 
                         </div>
                     </div>
-                    <div class="topbar-user row">
-                        <div class="btn-group username-btn">
-                            <button type="button" class="btn btn-dark">
+                    <div class="topbar-user row ">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle rounded-pill text-white" id="button" type="button" data-toggle="dropdown"> <img class="user-img mr-2 ml-n2" src="/assets/avatar.png" alt=""><span class="text-white mml-2">User Name</span> 
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu bg-dark ">
+                              <li><a class="text-white" href="#">Action</a></li>
+                              <li><a class="text-white" href="#">CSS</a></li>
+                              <li><a class="text-white" href="#">JavaScript</a></li>
+                            </ul>
+                          </div>
+
+                        <!-- <div class="btn-group username-btn">
+                            <button type="button" class="btn btn-dark" id="button">
                                 <img class="user-img" src="/assets/avatar.png" alt="">
                                 Username
                             </button>
                             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false">
+                                data-toggle="dropdown" aria-expanded="false" id="button-right">
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu">
@@ -99,21 +104,21 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
 
                 </div>
 
 
-                <div class="container px-0 mx-0">
+                <div class="container" id="good-morning-sec">
 
 
                     <div class="row col-12 good-morning">
-                        <div class="col-12 d-flex align-items-center">
+                        <div class="col-12 d-flex">
                             <h3>Good Morning</h3>
                         </div>
-                        <div class="row container good-morning-div" id="good-morning">
+                        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-6  good-morning-div" id="good-morning">
                             <!-- <div class="col-2 p-0 good-morning-content d-flex align-items-center">
                                 <img class="col-5 pl-0 good-morning-img " src="/assets/avatar.png" alt="">
                                 <div>Singer</div>
@@ -123,8 +128,11 @@
                 </div>
 
 
-                <div class="container">
-                    <h3>Recently Played</h3>
+                <div class="container mt-4" id="recent-played-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline">Recently Played </h4><span
+                            class="text-muted text-end display-6 underline" onclick="showAll('recent-played-sec', 'pop')"><strong>SHOW ALL</strong> </span>
+                    </div>
                     <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="recent-played">
                     </div>
                 </div>
@@ -142,18 +150,28 @@
                             <span>Podcasts we think you'll got hooked on.</span>
                             <div>Cards</div>
                         </div> -->
-                <div class="container">
-                    <h3>Shows to try</h3>
-                    <span>Podcasts we think you'll got hokked on.</span>
-                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="show-to-try">
+                <div class="container mt-3" id="shows-to-try-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline" >Shows to try</h4>
+                        <span class="text-muted text-end display-6 underline" onclick="showAll('shows-to-try-sec', 'podcasts')"><strong>SHOW ALL</strong> </span>
+                    </div>
+                    <span class="mb-3 text-muted mt-n2">Podcasts we think you'll got hokked on.</span>
+                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="shows-to-try">
                     </div>
                 </div>
 
 
-                <div class="container">
-                    <h3>Spotify Original & Exclusives</h3>
-                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="spotify">
+                <div class="container mt-3" id="exclusives-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline">Spotify Original & Exclusives</h4>
+                        <span class="text-muted text-end display-6 underline" onclick="showAll('exclusives-sec', 'mix')"><strong>SHOW ALL</strong> </span>
                     </div>
+                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="exclusives">
+                    </div>
+                </div>
+
+                <div class="container mt-5 mb-5">
+
                 </div>
 
             </div>
@@ -164,7 +182,8 @@
         <div class="song-bar">
             <div class="song-infos">
                 <div class="image-container">
-                    <img id="album-art" src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
+                    <img id="album-art"
+                        src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
                         alt="" />
                 </div>
                 <div class="song-description">
@@ -183,14 +202,14 @@
             </div>
         </div>
         <div class="progress-controller">
-            <div class="control-buttons">
+            <div class="control-buttons mt-4">
                 <i class="fas fa-random"></i>
-                <i class="fas fa-step-backward"></i>
-                <i class="play-pause fas fa-play"></i>
-                <i class="fas fa-step-forward"></i>
+                <i class="fas fa-step-backward" onclick="onClickPrev()"></i>
+                <i id="play-pause-btn" onclick="onPlayPause(event)" class="play-pause fas fa-play"></i>
+                <i class="fas fa-step-forward" onclick="onClickNext()"></i>
                 <i class="fas fa-undo-alt"></i>
             </div>
-            <div class="progress-container">
+            <div class="progress-container mt-n4">
                 <span id="time-over">
                     0:49
                 </span>
@@ -215,6 +234,7 @@
     </div>
 
 
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -226,4 +246,3 @@
 
 
 </html>
-
