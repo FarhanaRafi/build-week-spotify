@@ -71,8 +71,8 @@ const playTrack = (trackId) => {
   title.innerText = selectedTrack.album.title;
   artistName.innerText = selectedTrack.artist.name;
   duration.innerText = selectedTrack.duration;
-   console.log(selectedTrack);
-}
+  console.log(selectedTrack);
+};
 
 const renderGoodMorning = (arrayOfSongs) => {
   let container = document.querySelector(".good-morning-div");

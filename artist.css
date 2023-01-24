@@ -3,37 +3,35 @@ body {
   color: white;
   height: 100vh;
 }
-.card {
-  border: none;
-  border-radius: 20px;
-}
 
-.card img {
-  padding: 7px;
-  background-color: rgb(27, 27, 27);
-}
-.card-body {
-  background-color: rgb(19, 19, 19);
-}
-.card :hover {
-  background-color: rgb(65, 64, 64);
-}
-.card :hover .card img {
-  background-color: rgb(65, 64, 64);
-}
-.card-title,
-.card-text {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 100%;
+.logo {
+  position: sticky;
+  z-index: 1;
+  top: 25px;
 }
 
 .side-bar {
   position: sticky;
   z-index: 1;
-  top: 0;
+  top: 90px;
   height: 88vh;
+}
+
+.side-bar-text {
+  opacity: 0.5;
+  border: none;
+  background-color: #343a40;
+  color: white;
+}
+
+.side-bar i {
+  margin-right: 5px;
+  font-size: 25px;
+}
+
+.side-bar-text:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 hr {
@@ -55,10 +53,6 @@ hr {
 
 .search-bar {
   visibility: hidden;
-}
-
-.good-morning-content {
-  background-color: rgba(245, 245, 245, 0.158);
 }
 
 .music-player {
@@ -212,6 +206,16 @@ i:hover {
 .artist {
   color: var(--secondary-color);
 }
+
+table {
+  color: white;
+}
+
+th,
+td {
+  color: white;
+}
+
 .icons {
   display: flex;
   gap: 1em;
@@ -312,4 +316,26 @@ i:hover {
   right: 0;
   visibility: visible;
   background-color: transparent;
+}
+.artist-pick-icon {
+  font-size: 5px;
+}
+
+.card {
+  border: none;
+  border-radius: 20px;
+}
+
+.card img {
+  padding: 7px;
+  background-color: rgb(27, 27, 27);
+}
+.card-body {
+  background-color: rgb(19, 19, 19);
+}
+.card :hover {
+  background-color: rgb(65, 64, 64);
+}
+.card :hover .card img {
+  background-color: rgb(65, 64, 64);
 }
