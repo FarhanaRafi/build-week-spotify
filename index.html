@@ -18,102 +18,73 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-
 <body>
     <div class="container-fluid page-wrapper">
         <div class="row">
             <div class="col-2  d-block row">
 
                 <div class="container d-block side-bar ">
-                <img class="logo col-10 my-3 mt-4" src="/assets/Spotify_Logo.png" alt="">
+                    <img class="logo col-10 my-3 mt-4" src="/assets/Spotify_Logo.png" alt="">
                     <button class="my-2 side-bar-text d-block align-items-center">
-                        <i class="bi bi-house-door-fill"></i> 
+                        <i class="bi bi-house-door-fill"></i>
                         Home
                     </button>
-                    <button class="my-2 side-bar-text side-bar-search d-block">
-                        <i class="bi bi-search"></i> 
+                    <button class="my-2 side-bar-text side-bar-search d-block" onclick="searchBarVisible()">
+                        <i class="bi bi-search"></i>
                         Search
                     </button>
                     <button class="my-2 side-bar-text d-block">
-                        <i class="bi bi-music-note-list"></i> 
+                        <i class="bi bi-music-note-list"></i>
                         Your Library
                     </button>
                     <button class="my-2 side-bar-text d-block">
-                        <i class="bi bi-plus-square-fill"></i> 
+                        <i class="bi bi-plus-square-fill"></i>
                         Create Playlist
                     </button>
                     <button class="my-2 side-bar-text d-block">
-                        <i class="bi bi-heart-fill"></i> 
+                        <i class="bi bi-heart-fill"></i>
                         Liked Songs
                     </button>
-
-
                     <hr>
                 </div>
-
-
             </div>
-            
             <div class="container col-10">
-                <div class="col-12 d-flex top-bar justify-content-between align-items-center mt-2">
+                <div class="col-12 d-flex top-bar justify-content-between align-items-center mt-2 mb-3">
                     <div class="topbar-btn-col row d-flex justify-content-between">
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i> 
+                            <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i>
                         </div>
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i> 
+                            <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i>
                         </div>
-                        <div class="search-bar row col">
-                            <div class="input-group flex-nowrap">
+                        <div class="search-bar row col ml-4">
+                            <div class="input-group flex-nowrap d-none" id="input">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="addon-wrapping">
                                         <i class="bi bi-search"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="What do you want to listen to?"
-                                    aria-label="Username" aria-describedby="addon-wrapping">
+                                <input type="text" id="search-input" class="form-control"
+                                    placeholder="What do you want to listen to?" aria-label="Username"
+                                    aria-describedby="addon-wrapping">
                             </div>
-
-
                         </div>
                     </div>
                     <div class="topbar-user row ">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle rounded-pill text-white" id="button" type="button" data-toggle="dropdown"> <img class="user-img mr-2 ml-n2" src="/assets/avatar.png" alt=""><span class="text-white mml-2">User Name</span> 
-                            <span class="caret"></span></button>
+                            <button class="btn dropdown-toggle rounded-pill text-white" id="button" type="button"
+                                data-toggle="dropdown"> <img class="user-img mr-2 ml-n2" src="/assets/avatar.png"
+                                    alt=""><span class="text-white mml-2">User Name</span>
+                                <span class="caret"></span></button>
                             <ul class="dropdown-menu bg-dark ">
-                              <li><a class="text-white" href="#">Action</a></li>
-                              <li><a class="text-white" href="#">CSS</a></li>
-                              <li><a class="text-white" href="#">JavaScript</a></li>
+                                <li><a class="text-white" href="#">Action</a></li>
+                                <li><a class="text-white" href="#">CSS</a></li>
+                                <li><a class="text-white" href="#">JavaScript</a></li>
                             </ul>
-                          </div>
-
-                        <!-- <div class="btn-group username-btn">
-                            <button type="button" class="btn btn-dark" id="button">
-                                <img class="user-img" src="/assets/avatar.png" alt="">
-                                Username
-                            </button>
-                            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false" id="button-right">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div> -->
+                        </div>
                     </div>
-
-
                 </div>
-
-
                 <div class="container" id="good-morning-sec">
-
-
                     <div class="row col-12 good-morning">
                         <div class="col-12 d-flex">
                             <h3>Good Morning</h3>
@@ -126,13 +97,9 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="container mt-4 d-none" id="search-result-sec">
                     <div class="d-flex justify-content-between">
-                        <h4 class="mb-3 underline">Recently Played </h4><span
-                            class="text-muted text-end display-6 underline"><strong>SHOW ALL</strong> </span>
+                        <h4 class="mb-3 underline">Search Results</h4>
                     </div>
                     <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="search-result">
                     </div>
@@ -141,40 +108,27 @@
                 <div class="container mt-4" id="recent-played-sec">
                     <div class="d-flex justify-content-between">
                         <h4 class="mb-3 underline">Recently Played </h4><span
-                            class="text-muted text-end display-6 underline" onclick="showAll('recent-played-sec', 'pop')"><strong>SHOW ALL</strong> </span>
+                            class="text-muted text-end display-6 underline"
+                            onclick="showAll('recent-played-sec', 'pop')"><strong>SHOW ALL</strong> </span>
                     </div>
                     <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="recent-played">
                     </div>
                 </div>
-                <!-- <div class="recent-played">
-                        <div class="col-12">
-                            <h5>Recently played</h5>
-                            <div>Cards</div>
-                        </div>
-                    </div> -->
-                <!-- 
-
-                    <div class="shows-to-try">
-                        <div class="col-12">
-                            <h5>Shows to try</h5>
-                            <span>Podcasts we think you'll got hooked on.</span>
-                            <div>Cards</div>
-                        </div> -->
                 <div class="container mt-3" id="shows-to-try-sec">
                     <div class="d-flex justify-content-between">
-                        <h4 class="mb-3 underline" >Shows to try</h4>
-                        <span class="text-muted text-end display-6 underline" onclick="showAll('shows-to-try-sec', 'podcasts')"><strong>SHOW ALL</strong> </span>
+                        <h4 class="mb-3 underline">Shows to try</h4>
+                        <span class="text-muted text-end display-6 underline"
+                            onclick="showAll('shows-to-try-sec', 'podcasts')"><strong>SHOW ALL</strong> </span>
                     </div>
                     <span class="mb-3 text-muted mt-n2">Podcasts we think you'll got hokked on.</span>
                     <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="shows-to-try">
                     </div>
                 </div>
-
-
                 <div class="container mt-3" id="exclusives-sec">
                     <div class="d-flex justify-content-between">
                         <h4 class="mb-3 underline">Spotify Original & Exclusives</h4>
-                        <span class="text-muted text-end display-6 underline" onclick="showAll('exclusives-sec', 'mix')"><strong>SHOW ALL</strong> </span>
+                        <span class="text-muted text-end display-6 underline"
+                            onclick="showAll('exclusives-sec', 'mix')"><strong>SHOW ALL</strong> </span>
                     </div>
                     <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="exclusives">
                     </div>
@@ -184,110 +138,82 @@
 
                 </div>
 
-<div class="container my-5">
-    <footer
-            class=" text-lg-start text-muted">
-      <div class="container p-4 pb-0">
-          <div class="row">
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">
-                Company 
-              </h6>
-              <p>
-                Impressum
-              </p>
-              <p>About</p>
-              <p>Jobs</p>
-            </div>
-            <hr class="w-100 clearfix d-md-none" />
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Communities</h6>
-              <p>
-                <a class="text-muted">For Artist</a>
-              </p>
-              <p>
-                <a class="text-muted">Developers</a>
-              </p>
-              <p>
-                <a class="text-muted">Advertising</a>
-              </p>
-              <p>
-                <a class="text-muted">Investors</a>
-              </p>
-            </div>
-  
-            <hr class="w-100 clearfix d-md-none" />
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">
-                Useful links
-              </h6>
-              <p>
-                <a class="text-muted">Your Account</a>
-              </p>
-           
-             
-                <a class="text-muted">Help</a>
-              </p>
-            </div>
-            <hr class="w-100 clearfix d-md-none" />
-          </div>
-        </section>
-  
-        <hr class="my-3">
-        <section class="p-3 pt-0">
-          <div class="row d-flex align-items-center">
-            <div class="col-md-7 col-lg-8 text-center text-md-start mb-5">
-              <div class="p-3">
-                © 2023 Copyright:
-                <a class="text-muted" href="#"
-                   >Spotify AB</a
-                  >
-              </div>
-            </div>
-           
-            <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end mb-5">
-              <a
-                 class="btn btn-outline-light btn-floating m-1"
-                 class="text-white"
-                 role="button"
-                 ><i class="fab fa-facebook-f"></i
-                ></a>
-              <a
-                 class="btn btn-outline-light btn-floating m-1"
-                 class="text-white"
-                 role="button"
-                 ><i class="fab fa-twitter"></i
-                ></a>
-              <a
-                 class="btn btn-outline-light btn-floating m-1"
-                 class="text-white"
-                 role="button"
-                 ><i class="fab fa-google"></i
-                ></a>
-              <a
-                 class="btn btn-outline-light btn-floating m-1"
-                 class="text-white"
-                 role="button"
-                 ><i class="fab fa-instagram"></i
-                ></a>
-            </div>
-          </div>
-        </section>
-      </div>
-    </footer>
-  </div>
+                <div class="container my-5">
+                    <footer class=" text-lg-start text-muted">
+                        <div class="container p-4 pb-0">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                                        Company
+                                    </h6>
+                                    <p>
+                                        Impressum
+                                    </p>
+                                    <p>About</p>
+                                    <p>Jobs</p>
+                                </div>
+                                <hr class="w-100 clearfix d-md-none" />
+                                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                                    <h6 class="text-uppercase mb-4 font-weight-bold">Communities</h6>
+                                    <p>
+                                        <a class="text-muted">For Artist</a>
+                                    </p>
+                                    <p>
+                                        <a class="text-muted">Developers</a>
+                                    </p>
+                                    <p>
+                                        <a class="text-muted">Advertising</a>
+                                    </p>
+                                    <p>
+                                        <a class="text-muted">Investors</a>
+                                    </p>
+                                </div>
+
+                                <hr class="w-100 clearfix d-md-none" />
+                                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                                        Useful links
+                                    </h6>
+                                    <p>
+                                        <a class="text-muted">Your Account</a>
+                                    </p>
 
 
+                                    <a class="text-muted">Help</a>
+                                    </p>
+                                </div>
+                                <hr class="w-100 clearfix d-md-none" />
+                            </div>
+                            </section>
+
+                            <hr class="my-3">
+                            <section class="p-3 pt-0">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-md-7 col-lg-8 text-center text-md-start mb-5">
+                                        <div class="p-3">
+                                            © 2023 Copyright:
+                                            <a class="text-muted" href="#">Spotify AB</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end mb-5">
+                                        <a class="btn btn-outline-light btn-floating m-1" class="text-white"
+                                            role="button"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-outline-light btn-floating m-1" class="text-white"
+                                            role="button"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-outline-light btn-floating m-1" class="text-white"
+                                            role="button"><i class="fab fa-google"></i></a>
+                                        <a class="btn btn-outline-light btn-floating m-1" class="text-white"
+                                            role="button"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </footer>
+                </div>
             </div>
-        
-        
         </div>
-
-
-        
     </div>
-    
-
     <div class="col-12 music-player">
         <div class="song-bar">
             <div class="song-infos">
@@ -343,9 +269,6 @@
         </div>
     </div>
 
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -354,6 +277,4 @@
         crossorigin="anonymous"></script>
     <script src="./script.js"></script>
 </body>
-
-
 </html>
