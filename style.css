@@ -58,6 +58,21 @@ hr {
   background-color: rgba(245, 245, 245, 0.192);
 }
 
+.arrow{
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+#button{
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
+}
+
+#button-right {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
 .top-bar {
   position: sticky;
   background-color: #111;
@@ -66,8 +81,9 @@ hr {
   height: 8vh;
 }
 
+
 .user-img {
-  width: 20px;
+  width: 30px;
   border-radius: 50%;
 }
 
@@ -227,10 +243,10 @@ i:hover {
 .volume-bar .progress-bar:hover .progress::after {
   --size: 0.8em;
 }
-.artist {
+/* .artist {
   color: var(--secondary-color);
-}
-.icons {
+} */
+/* .icons {
   display: flex;
   gap: 1em;
 }
@@ -310,6 +326,15 @@ i:hover {
 }
 .volume-bar .progress-bar:hover .progress::after {
   --size: 0.8em;
+} */
+
+
+
+
+
+
+.underline:hover{
+  text-decoration: underline;
 }
 
 .play-btn-container {
@@ -332,3 +357,4 @@ i:hover {
   visibility: visible;
   background-color: transparent;
 }
+
