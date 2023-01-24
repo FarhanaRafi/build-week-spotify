@@ -64,10 +64,10 @@
                 <div class="col-12 d-flex top-bar justify-content-between align-items-center">
                     <div class="topbar-btn-col row d-flex justify-content-between">
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-arrow-left-circle"></i>
+                            <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i> 
                         </div>
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-arrow-right-circle"></i>
+                            <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i> 
                         </div>
                         <div class="search-bar row col">
                             <div class="input-group flex-nowrap">
@@ -85,12 +85,12 @@
                     </div>
                     <div class="topbar-user row">
                         <div class="btn-group username-btn">
-                            <button type="button" class="btn btn-dark">
+                            <button type="button" class="btn btn-dark" id="button">
                                 <img class="user-img" src="/assets/avatar.png" alt="">
                                 Username
                             </button>
                             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false">
+                                data-toggle="dropdown" aria-expanded="false" id="button-right">
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu">
@@ -107,7 +107,7 @@
                 </div>
 
 
-                <div class="container px-0 mx-0">
+                <div class="container" id="good-morning-sec">
 
 
                     <div class="row col-12 good-morning">
@@ -124,8 +124,11 @@
                 </div>
 
 
-                <div class="container mt-4">
-                    <h4 class="mb-3">Recently Played</h4>
+                <div class="container mt-4" id="recent-played-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline">Recently Played </h4><span
+                            class="text-muted text-end display-6 underline" onclick="showAll('recent-played-sec', 'pop')"><strong>SHOW ALL</strong> </span>
+                    </div>
                     <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="recent-played">
                     </div>
                 </div>
@@ -143,22 +146,28 @@
                             <span>Podcasts we think you'll got hooked on.</span>
                             <div>Cards</div>
                         </div> -->
-                <div class="container mt-3">
-                    <h4 >Shows to try</h4>
+                <div class="container mt-3" id="shows-to-try-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline" >Shows to try</h4>
+                        <span class="text-muted text-end display-6 underline" onclick="showAll('shows-to-try-sec', 'podcasts')"><strong>SHOW ALL</strong> </span>
+                    </div>
                     <span class="mb-3 text-muted mt-n2">Podcasts we think you'll got hokked on.</span>
-                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="show-to-try">
+                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="shows-to-try">
                     </div>
                 </div>
 
 
-                <div class="container mt-3">
-                    <h4 class="mb-3">Spotify Original & Exclusives</h4>
-                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="spotify">
+                <div class="container mt-3" id="exclusives-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline">Spotify Original & Exclusives</h4>
+                        <span class="text-muted text-end display-6 underline" onclick="showAll('exclusives-sec', 'mix')"><strong>SHOW ALL</strong> </span>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="exclusives">
                     </div>
                 </div>
 
                 <div class="container mt-5 mb-5">
-              
+
                 </div>
 
             </div>
@@ -169,7 +178,8 @@
         <div class="song-bar">
             <div class="song-infos">
                 <div class="image-container">
-                    <img id="album-art" src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
+                    <img id="album-art"
+                        src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
                         alt="" />
                 </div>
                 <div class="song-description">
@@ -190,9 +200,9 @@
         <div class="progress-controller">
             <div class="control-buttons mt-4">
                 <i class="fas fa-random"></i>
-                <i class="fas fa-step-backward" onclick ="onClickPrev()"></i>
-                <i id="play-pause-btn" onclick = "onPlayPause(event)" class="play-pause fas fa-play"></i>
-                <i class="fas fa-step-forward" onclick ="onClickNext()"></i>
+                <i class="fas fa-step-backward" onclick="onClickPrev()"></i>
+                <i id="play-pause-btn" onclick="onPlayPause(event)" class="play-pause fas fa-play"></i>
+                <i class="fas fa-step-forward" onclick="onClickNext()"></i>
                 <i class="fas fa-undo-alt"></i>
             </div>
             <div class="progress-container mt-n4">
@@ -232,4 +242,3 @@
 
 
 </html>
-

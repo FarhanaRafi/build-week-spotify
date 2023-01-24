@@ -8,6 +8,14 @@ const options = {
 let globalTracks = [];
 let audioPlayer = null;
 let selectedTrackIndex = null;
+
+let sections = [
+  "good-morning-sec",
+  "recent-played-sec",
+  "shows-to-try-sec",
+  "exclusives-sec",
+];
+
 const getTrackDetails = async (searchQuery) => {
   try {
     let res = await fetch(
@@ -23,8 +31,9 @@ const getTrackDetails = async (searchQuery) => {
   }
 };
 
-const renderCards = (tracks, section, playable) => {
+const renderCards = (tracks, section, playable, displayAll = false) => {
   let container = document.getElementById(section);
+  console.log(tracks, section);
   let trackCards;
   if (!playable) {
     trackCards = tracks.map((track) => {
@@ -146,12 +155,27 @@ const onCardClick = (event) => {
 };
 
 const loadSections = async () => {
+  sections.forEach((section) => {
+    document.getElementById(section).classList.remove("d-none");
+  });
   getSection("pop", "recent-played", false);
-  getSection("podcasts", "show-to-try", true);
-  getSection("mix", "spotify", true);
+  getSection("podcasts", "shows-to-try", true);
+  getSection("mix", "exclusives", true);
 
   const goodMorningTracks = await getTrackDetails("hits");
   renderGoodMorning(goodMorningTracks);
+};
+
+const showAll = async (section, searchQuery) => {
+  console.log(section);
+  let tracks = await getTrackDetails(searchQuery);
+  sections.forEach((item) => {
+    console.log(section, item);
+    if (item != section) {
+      document.getElementById(item).classList.add("d-none");
+    }
+  });
+  renderCards(tracks, section.substring(0, section.length - 4), true, true);
 };
 
 window.onload = () => {
