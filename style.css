@@ -1,8 +1,12 @@
 body {
-  background-color: #111;
-  /* background-color: black; */
   color: white;
   height: 100vh;
+}
+
+.page-wrapper{
+  flex-grow:1;
+    background: rgb(228, 62, 62);
+    background: linear-gradient(180deg, rgb(213, 49, 23) 0%, rgba(18,18,18,1) 18%);
 }
 .card {
   border: none;
@@ -77,7 +81,8 @@ hr {
 }
 
 .top-bar {
-  background-color: #111;
+  background-color: transparent;
+  /* background-color: #111; */
   position: sticky;
   /* background-color: black; */
   z-index: 1;
