@@ -22,13 +22,10 @@
 <body>
     <div class="container-fluid page-wrapper">
         <div class="row">
-            <div class="col-2 bg-dark d-block row">
+            <div class="col-2  d-block row">
 
-
-                <img class="logo col-9 my-3 mt-4" src="/assets/Spotify_Logo.png" alt="">
                 <div class="container d-block side-bar ">
-
-
+                <img class="logo col-10 my-3 mt-4" src="/assets/Spotify_Logo.png" alt="">
                     <button class="my-2 side-bar-text d-block align-items-center">
                         <i class="bi bi-house-door-fill"></i> 
                         Home
@@ -58,7 +55,7 @@
             </div>
             
             <div class="container col-10">
-                <div class="col-12 d-flex top-bar justify-content-between align-items-center">
+                <div class="col-12 d-flex top-bar justify-content-between align-items-center ">
                     <div class="topbar-btn-col row d-flex justify-content-between">
                         <div class="col-1 d-flex align-items-center">
                             <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i> 
@@ -80,8 +77,18 @@
 
                         </div>
                     </div>
-                    <div class="topbar-user row">
-                        <div class="btn-group username-btn">
+                    <div class="topbar-user row ">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle rounded-pill text-white" id="button" type="button" data-toggle="dropdown"> <img class="user-img mr-2 ml-n2" src="/assets/avatar.png" alt=""><span class="text-white mml-2">User Name</span> 
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu bg-dark ">
+                              <li><a class="text-white" href="#">Action</a></li>
+                              <li><a class="text-white" href="#">CSS</a></li>
+                              <li><a class="text-white" href="#">JavaScript</a></li>
+                            </ul>
+                          </div>
+
+                        <!-- <div class="btn-group username-btn">
                             <button type="button" class="btn btn-dark" id="button">
                                 <img class="user-img" src="/assets/avatar.png" alt="">
                                 Username
@@ -97,7 +104,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
 
@@ -108,10 +115,10 @@
 
 
                     <div class="row col-12 good-morning">
-                        <div class="col-12 d-flex align-items-center">
+                        <div class="col-12 d-flex">
                             <h3>Good Morning</h3>
                         </div>
-                        <div class="row container good-morning-div" id="good-morning">
+                        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-6  good-morning-div" id="good-morning">
                             <!-- <div class="col-2 p-0 good-morning-content d-flex align-items-center">
                                 <img class="col-5 pl-0 good-morning-img " src="/assets/avatar.png" alt="">
                                 <div>Singer</div>
