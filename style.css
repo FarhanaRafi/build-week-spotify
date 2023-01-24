@@ -1,5 +1,6 @@
 body {
-  background-color: black;
+  background-color: #111;
+  /* background-color: black; */
   color: white;
   height: 100vh;
 }
@@ -31,7 +32,8 @@ body {
 }
 
 .side-bar {
-  background-color: #111;
+  background-color: black;
+  /* background-color: #111; */
   position: sticky;
   z-index: 1;
   top: 0;
@@ -39,7 +41,8 @@ body {
 }
 
 .side-bar-text {
-  background-color: #111;
+  background-color: black;
+  /* background-color: #111; */
   opacity: 0.5;
   border: none;
   /* background-color: #343a40; */
@@ -73,8 +76,9 @@ hr {
 }
 
 .top-bar {
+  background-color: #111;
   position: sticky;
-  background-color: black;
+  /* background-color: black; */
   z-index: 1;
   top: 0;
   height: 8vh;
