@@ -3,15 +3,14 @@ body {
   color: white;
   height: 100vh;
 }
-.card{
-    border: none;
-    border-radius: 20px;
+.card {
+  border: none;
+  border-radius: 20px;
 }
 
-
-.card img{
-    padding: 7px;
-    background-color: rgb(27, 27, 27);
+.card img {
+  padding: 7px;
+  background-color: rgb(27, 27, 27);
 }
 .card-body {
   background-color: rgb(19, 19, 19);
@@ -23,7 +22,8 @@ body {
   background-color: rgb(65, 64, 64);
 }
 .card-title,
-.card-text {
+.card-text,
+.good-morning-singer {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -35,6 +35,23 @@ body {
   z-index: 1;
   top: 0;
   height: 88vh;
+}
+
+.side-bar-text {
+  opacity: 0.5;
+  border: none;
+  background-color: #343a40;
+  color: white;
+}
+
+.side-bar i {
+  margin-right: 5px;
+  font-size: 25px;
+}
+
+.side-bar-text:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 hr {
@@ -63,26 +80,26 @@ hr {
 }
 
 .music-player {
-     position: fixed;
-    bottom: 0;
-    --primary-color: #ddd;
-    --secondary-color: #999;
-    --green-color: #2d5;
-    --padding: 1em;
-    background-color: rgb(28, 27, 27);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15vh;
-    padding: var(--padding);
-    color: var(--primary-color);
-    z-index: 1;
+  position: fixed;
+  bottom: 0;
+  --primary-color: #ddd;
+  --secondary-color: #999;
+  --green-color: #2d5;
+  --padding: 1em;
+  background-color: rgb(28, 27, 27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  padding: var(--padding);
+  color: var(--primary-color);
+  z-index: 1;
 }
-i{
-    color: var(--secondary-color);
+i {
+  color: var(--secondary-color);
 }
-i:hover{
-    color: var(--primary-color);
+i:hover {
+  color: var(--primary-color);
 }
 .song-bar {
   position: absolute;
@@ -124,91 +141,91 @@ i:hover{
 }
 .title:hover,
 .artist:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-.artist{
-    color: var(--secondary-color);
+.artist {
+  color: var(--secondary-color);
 }
-.icons{
-    display: flex;
-    gap: 1em;
+.icons {
+  display: flex;
+  gap: 1em;
 }
-.progress-controller{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5em;
-    color: var(--secondary-color);
+.progress-controller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  color: var(--secondary-color);
 }
-.control-buttons{
-    display: flex;
-    align-items: center;
-    gap: 2em;
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 2em;
 }
-.play-pause{
-    display: inline-block;
-    padding: 1em;
-    background-color: var(--primary-color);
-    color: #111;
-    border-radius: 50%;
+.play-pause {
+  display: inline-block;
+  padding: 1em;
+  background-color: var(--primary-color);
+  color: #111;
+  border-radius: 50%;
 }
-.play-pause:hover{
-    transform: scale(1.1);
-    color: #111;
+.play-pause:hover {
+  transform: scale(1.1);
+  color: #111;
 }
-.progress-container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
+.progress-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
 }
-.progress-bar{
-    height: 4px;
-    border-radius: 10px;
-    width: 30%;
-    background-color: #ccc4;
+.progress-bar {
+  height: 4px;
+  border-radius: 10px;
+  width: 30%;
+  background-color: #ccc4;
 }
-.progress{
-    position: relative;
-    height: 100%;
-    width: 30%;
-    border-radius: 10px;
-    /* background-color: var(--secondary-color); */
+.progress {
+  position: relative;
+  height: 100%;
+  width: 30%;
+  border-radius: 10px;
+  /* background-color: var(--secondary-color); */
 }
-.progress-bar:hover .progress{
-    background-color: var(--green-color);
+.progress-bar:hover .progress {
+  background-color: var(--green-color);
 }
-.progress-bar:hover .progress::after{
-    content: "";
-    position: absolute;
-    --size: 1em;
-    width: var(--size);
-    height: var(--size);
-    right: 0;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    transform: translate(50%, calc(2px - 50%));
+.progress-bar:hover .progress::after {
+  content: "";
+  position: absolute;
+  --size: 1em;
+  width: var(--size);
+  height: var(--size);
+  right: 0;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transform: translate(50%, calc(2px - 50%));
 }
-.other-features{
-    position: absolute;
-    right: var(--padding);
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
+.other-features {
+  position: absolute;
+  right: var(--padding);
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }
-.volume-bar{
-    display: flex;
-    align-items: center;
-    gap: .7em;
+.volume-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
 }
-.volume-bar .progress-bar{
-    width: 6em;
+.volume-bar .progress-bar {
+  width: 6em;
 }
-.volume-bar .progress-bar:hover .progress::after{
-    --size: .8em;
+.volume-bar .progress-bar:hover .progress::after {
+  --size: 0.8em;
 }
 .artist {
   color: var(--secondary-color);
@@ -295,23 +312,23 @@ i:hover{
   --size: 0.8em;
 }
 
-.play-btn-container{
- position: relative;
- background-color: transparent;
+.play-btn-container {
+  position: relative;
+  background-color: transparent;
 }
-.play-btn{
-    position: absolute;
-    font-size: 34px;
-    bottom: 0;
-    right: 0;
-    visibility: hidden;
-    background-color: transparent;
+.play-btn {
+  position: absolute;
+  font-size: 34px;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  background-color: transparent;
 }
-.card:hover .play-btn{
-    position: absolute;
-    font-size: 44px;
-    bottom: 0;
-    right: 0;
-    visibility: visible;
-    background-color: transparent;  
+.card:hover .play-btn {
+  position: absolute;
+  font-size: 44px;
+  bottom: 0;
+  right: 0;
+  visibility: visible;
+  background-color: transparent;
 }
