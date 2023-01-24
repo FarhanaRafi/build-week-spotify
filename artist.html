@@ -21,7 +21,7 @@
 <body>
     <div class="container-fluid page-wrapper">
         <div class="row">
-            <div class="col-2 bg-dark d-block row">
+            <div class="col-2 d-block row pr-0">
 
                 <img class="logo col-9 my-3 mt-4" src="/assets/Spotify_Logo.png" alt="">
                 <div class="container d-block side-bar">
@@ -55,15 +55,13 @@
 
             </div>
 
-            <div class="container col-10">
+            <div class="container col-10" id="cover-image" style="">
                 <div class="col-12 d-flex top-bar justify-content-between align-items-center">
                     <div class="topbar-btn-col row d-flex justify-content-between">
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-arrow-left-circle"></i>
-                        </div>
+                            <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i></div>
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-arrow-right-circle"></i>
-                        </div>
+                            <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i></div>
                         <div class="search-bar row col">
                             <div class="input-group flex-nowrap">
                                 <div class="input-group-prepend">
@@ -108,6 +106,8 @@
                         <h1></h1>
                         <p class="listeners"></p>
                     </div>
+
+                    <!-- there should be a div from here -->
                     <div class="lower-artist d-flex">
                         <div class="d-flex">
 

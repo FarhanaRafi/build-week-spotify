@@ -11,16 +11,17 @@ body {
 }
 
 .side-bar {
+  background-color: #111;
   position: sticky;
   z-index: 1;
-  top: 90px;
+  top: 92px;
   height: 88vh;
 }
 
 .side-bar-text {
   opacity: 0.5;
   border: none;
-  background-color: #343a40;
+  background-color: #111111;
   color: white;
 }
 
@@ -40,10 +41,17 @@ hr {
 
 .top-bar {
   position: sticky;
-  background-color: #111;
+  background-color: black;
   z-index: 1;
   top: 0;
   height: 8vh;
+}
+
+.arrow {
+  font-size: 25px;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 6px;
 }
 
 .user-img {
@@ -53,6 +61,20 @@ hr {
 
 .search-bar {
   visibility: hidden;
+}
+
+#cover-image {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.tracks {
+  background: rgb(82, 82, 82);
+  background: linear-gradient(
+    180deg,
+    rgba(82, 82, 82, 1) 0%,
+    rgba(18, 18, 18, 1) 10%
+  );
 }
 
 .music-player {

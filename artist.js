@@ -6,7 +6,7 @@ const options = {
   },
 };
 window.onload = () => {
-  getTrack("queen");
+  getTrack("bruno-mars");
 };
 
 const getTrack = async (searchQuery) => {
@@ -103,5 +103,10 @@ const renderPlaylist = (arrayOfSongs) => {
           </div>
         </div>
       </div>`;
+  });
+
+  let background = document.querySelector("#cover-image");
+  arrayOfSongs.forEach((singleSong) => {
+    background.style.backgroundImage = `url('${singleSong.album.cover_xl}')`;
   });
 };
