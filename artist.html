@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    <link rel="stylesheet" href="normalise.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./artist.css">
+</head>
+
+
+<body>
+    <div class="container-fluid page-wrapper">
+        <div class="row">
+            <div class="col-2 d-block row pr-0">
+
+                <img class="logo col-9 my-3 mt-4" src="/assets/Spotify_Logo.png" alt="">
+                <div class="container d-block side-bar">
+
+
+                    <button class="my-2 side-bar-text d-block align-items-center">
+                        <i class="bi bi-house-door-fill"></i> 
+                        Home
+                    </button>
+                    <button class="my-2 side-bar-text side-bar-search d-block">
+                        <i class="bi bi-search"></i> 
+                        Search
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-music-note-list"></i> 
+                        Your Library
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-plus-square-fill"></i> 
+                        Create Playlist
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-heart-fill"></i> 
+                        Liked Songs
+                    </button>
+
+
+                    <hr>
+                </div>
+
+
+            </div>
+
+            <div class="container col-10" id="cover-image" style="">
+                <div class="col-12 d-flex top-bar justify-content-between align-items-center">
+                    <div class="topbar-btn-col row d-flex justify-content-between">
+                        <div class="col-1 d-flex align-items-center">
+                            <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i></div>
+                        <div class="col-1 d-flex align-items-center">
+                            <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i></div>
+                        <div class="search-bar row col">
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping">
+                                        <i class="bi bi-search"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="What do you want to listen to?"
+                                    aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="topbar-user row">
+                        <div class="btn-group username-btn">
+                            <button type="button" class="btn btn-dark">
+                                <img class="user-img" src="/assets/avatar.png" alt="">
+                                Username
+                            </button>
+                            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+<!-- content box -->
+                <div class="container px-0 mx-0 d-block">
+                    <div class="upper-artist">
+                        <p>Verified Artist</p>
+                        <h1></h1>
+                        <p class="listeners"></p>
+                    </div>
+
+                    <!-- there should be a div from here -->
+                    <div class="lower-artist d-flex">
+                        <div class="d-flex">
+
+                            <div>Play Button</div>
+                            <button>Follow</button>
+                            <p>...</p>
+                        
+                        </div>
+                    </div>
+                    <div class="row tracks">
+                        <div class="col-10 songlist">
+                            <h5>Popular</h5>
+                            <table class="table table-borderless">
+                                <tbody class="songlist-tbody">
+                                    <!-- <tr>
+                                        <th scope="row">#</th>
+                                        <td><img src="${singleSong.cover_small}" alt=""></td>
+                                        <td>Title</td>
+                                        <td>plays</td>
+                                        <td>duration</td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col artist-pick">
+                            <h5>Artist Pick</h5>
+                            <div class="row container artist-pick-div" >
+                                <!-- <div class="col-2 p-0 d-flex align-items-center">
+                                    <img class="col-5 pl-0 good-morning-img" src="" alt="img">
+                                    <div>Posted by artist</div>
+                                    <div></div>
+                                </div> -->
+                            </div>                       
+                         </div>
+                         <div class="container">
+                             
+                             <div class="row">
+                                 <h5>Popular releases</h5>
+                                 <div class="popular row"></div>
+                                </div>                    
+                                 <div class="row">
+                                    <h5>Albums</h5>
+                                    <div class="albums row"></div>
+                                </div>                    
+                                <div class="row">
+                                    <h5>Singles and EPs</h5>
+                                    <div class="singles row"></div>
+                                </div>                    
+                            </div>
+                            
+                            
+                        </div>
+                            
+                            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 music-player">
+        <div class="song-bar">
+            <div class="song-infos">
+                <div class="image-container">
+                    <img id="album-art" src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
+                        alt="" />
+                </div>
+                <div class="song-description">
+                    <p id="album-title" class="title">
+                        Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
+                    </p>
+                    <p id="album-artist" class="artist">
+                        Masaru Yokoyama
+
+                    </p>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-compress"></i>
+            </div>
+        </div>
+        <div class="progress-controller">
+            <div class="control-buttons">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward"></i>
+                <i class="play-pause fas fa-play"></i>
+                <i class="fas fa-step-forward"></i>
+                <i class="fas fa-undo-alt"></i>
+            </div>
+            <div class="progress-container">
+                <span id="time-over">
+                    0:49
+                </span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span id="time-remaining">
+                    3:15
+                </span>
+            </div>
+        </div>
+        <div class="other-features">
+            <i class="fas fa-list-ul"></i>
+            <i class="fas fa-desktop"></i>
+            <div class="volume-bar">
+                <i class="fas fa-volume-down"></i>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="./artist.js"></script>
+</body>
+
+
+</html>
+
