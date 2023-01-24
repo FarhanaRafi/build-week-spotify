@@ -138,7 +138,7 @@ const renderGoodMorning = (arrayOfSongs) => {
     container.innerHTML += `
       <div class="col-2 m-3 p-0 good-morning-content d-flex align-items-center">
       <img class="col-5 pl-0 good-morning-img " src="${singleSong.album.cover_medium}" alt="">
-      <div class-"good-morning-singer">${singleSong.artist.name}r</div>
+      <div class="good-morning-singer">${singleSong.artist.name}r</div>
       </div>
       `;
   });
@@ -155,9 +155,11 @@ const onCardClick = (event) => {
 };
 
 const loadSections = async () => {
+  document.getElementById("input").classList.add("d-none");
   sections.forEach((section) => {
     document.getElementById(section).classList.remove("d-none");
   });
+  document.getElementById("search-result-sec").classList.add("d-none");
   getSection("pop", "recent-played", false);
   getSection("podcasts", "shows-to-try", true);
   getSection("mix", "exclusives", true);
@@ -177,6 +179,25 @@ const showAll = async (section, searchQuery) => {
   });
   renderCards(tracks, section.substring(0, section.length - 4), true, true);
 };
+
+const searchBarVisible = () => {
+  document.getElementById("input").classList.remove("d-none");
+};
+
+const searchMusic = async () => {
+  let search = document.querySelector("#search-input").value;
+  if (search.length >= 4) {
+    sections.forEach((section) => {
+      document.getElementById(section).classList.add("d-none");
+    });
+    document.getElementById("search-result-sec").classList.remove("d-none");
+    let tracks = await getTrackDetails(search);
+    renderCards(tracks, "search-result", true, true);
+  }
+};
+document
+  .getElementById("search-input")
+  .addEventListener("keypress", searchMusic);
 
 window.onload = () => {
   loadSections();
