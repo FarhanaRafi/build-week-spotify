@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   color: white;
   height: 100vh;
 }
@@ -38,7 +39,6 @@ body {
 
 .side-bar {
   background-color: black;
-  /* background-color: #111; */
   position: sticky;
   z-index: 1;
   top: 0;
@@ -47,10 +47,8 @@ body {
 
 .side-bar-text {
   background-color: black;
-  /* background-color: #111; */
   opacity: 0.5;
   border: none;
-  /* background-color: #343a40; */
   color: white;
 }
 
@@ -81,13 +79,19 @@ hr {
 }
 
 .top-bar {
-  background-color: transparent;
-  /* background-color: #111; */
+  background-color: transparent; 
   position: sticky;
-  /* background-color: black; */
   z-index: 1;
   top: 0;
   height: 8vh;
+}
+
+.top-bar{
+  transition:100ms ease;
+  background:transparent;
+}
+.top-bar.scrolled{
+  background-color: #111;
 }
 
 .user-img {
@@ -97,7 +101,6 @@ hr {
 
 .good-morning-content {
   background-color: rgb(27, 27, 27);
-  /* background-color: rgb(19, 19, 19); */
 }
 
 .music-player {
