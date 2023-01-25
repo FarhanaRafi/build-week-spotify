@@ -16,6 +16,10 @@ let sections = [
   "exclusives-sec",
 ];
 
+$(window).scroll(function () {
+  $(".top-bar").toggleClass("scrolled", $(this).scrollTop() > 310);
+});
+
 const getTrackDetails = async (searchQuery) => {
   try {
     let res = await fetch(
