@@ -166,9 +166,8 @@ const getSpotify = (query) => {
 
 const renderAlbum = (fetchedAlbum, location) => {
     let album = document.createElement("tbody");
-    album.innerHTML += `<th scope="col" class="grey">#</th>
+    album.innerHTML += `<th scope="col">#</th>
     <th scope="col" class="col-10 grey">Title</th>
-    <!--<th scope="col" class="col-2"></th>--> 
     <th id="test" scope="col"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock grey" viewBox="0 0 16 16">
         <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
@@ -180,7 +179,7 @@ const renderAlbum = (fetchedAlbum, location) => {
         `
         <tr class="container">
         <td class="row ml-1">${i + 1}</td>
-        <td class="col-12 ml-5">${fetchedAlbum[i].title}<p class="name-select">${fetchedAlbum[i].artist.name}</p></td>
+        <td class="col-12 ml-5">${fetchedAlbum[i].title}<p class="name-select" onclick="onCardClick(event)">${fetchedAlbum[i].artist.name}</p></td>
         <td>${(fetchedAlbum[i].duration/60).toFixed(2)}</td></tr>`
         listOfAlbums.push(fetchedAlbum[i].album.cover);
         listOfAlbums.push(fetchedAlbum[i].title);
@@ -196,8 +195,20 @@ const renderAlbum = (fetchedAlbum, location) => {
 window.onload = function(){
     getSpotify("Bohemian Rhapsody (The Original Soundtrack)")
     getSpotifyDetails("Bohemian Rhapsody (The Original Soundtrack)");
+
+
 }
 
+const params = new URLSearchParams(location.search)
+const id = params.get("id")
 
-
-
+/*window.onload = async () => {
+  let res = await fetch(url + id, options)
+  getSpotify()
+  getSpotifyDetails()
+}*/
+const onCardClick = (event) => {
+  console.log(event)
+  //let selectedArtistId = event.target.closest("p").id;
+  //window.location.href = `./artist.html?id=${selectedArtistId}`;
+};
