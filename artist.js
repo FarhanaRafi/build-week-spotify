@@ -1,3 +1,13 @@
+const url = "https://striveschool-api.herokuapp.com/api/deezer/";
+const params = new URLSearchParams(location.search);
+const id = params.get("id");
+
+window.onload = async () => {
+  let res = await fetch(url + id, options);
+  console.log(res);
+  getTrack();
+};
+
 const options = {
   method: "GET",
   headers: {
@@ -6,7 +16,7 @@ const options = {
   },
 };
 window.onload = () => {
-  getTrack("bruno-mars");
+  getTrack("guns");
 };
 
 const getTrack = async (searchQuery) => {
