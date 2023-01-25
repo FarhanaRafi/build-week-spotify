@@ -364,7 +364,7 @@ z-index: 1;
   padding-inline: 2rem;
 }
 
-td:hover {
+tr:hover {
   background-color: #313131;
   border-radius: 25px;
 }
