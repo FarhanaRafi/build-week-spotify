@@ -1,0 +1,51 @@
+
+ body{
+    height: 100vh;
+    color: white;
+}
+
+.page-wrapper{
+    height: 88vh;
+    background-color: rgb(75, 18, 18);
+}
+
+.side-bar{
+    height: 88vh;
+}
+
+.top-bar{
+    height:8vh;
+}
+
+.good-morning{
+    height: 22vh;
+}
+
+.recent-played{
+    height: 30vh;
+}
+
+.shows-to-try{
+    height: 30vh;
+}
+
+.music-player{
+    height: 12vh;
+}
+
+img{
+    height: 10em;
+    width: 10em;
+  }
+#test {
+    justify-content: end;
+}
+
+.jumbotron{
+    background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,0.7371323529411764) 42%, rgba(52,24,45,1) 75%, rgba(154,65,131,1) 100%, rgba(129,55,113,1) 100%);
+}
+
+table {
+    color: white;
+}
