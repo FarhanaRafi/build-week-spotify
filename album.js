@@ -43,7 +43,7 @@ function showAlbumDetails(album) {
           <img id="smallArtistIconPicture" src="${album.artist.picture}"/>
         </div>
         <div class="mx-1">
-         <p>${album.artist.name}</p>
+         <a>${album.artist.name}</a>
         </div>
         <div class="mx-1">
           <p>2018</p>
@@ -59,6 +59,13 @@ function showAlbumDetails(album) {
     spotifyDetails.appendChild(albumDetails)
 }
 
+
+
+
+
+
+
+
 function showTracks(tracks) {
   tracks.forEach((track, index) => {
     const tr = document.createElement("tr")
@@ -67,7 +74,7 @@ function showTracks(tracks) {
   
     <td class="col-2">${index + 1}</td>
     <td class="col-8">
-    <p>${track.title}</p> <p class="text-muted">${track.artist.name}</p>
+    <p>${track.title}</p> <p class="text-muted" onclick="onClickArtist(${track.artist.id})">${track.artist.name}</p>
     </td>
     <td class="col-2">${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}</td>
   
@@ -81,6 +88,9 @@ function showTracks(tracks) {
     spotifyTracks.appendChild(tr)
   })
 
+}
+function onClickArtist(artistId) {
+  window.location.href = `./artist.html?id=${artistId}`;
 }
 
 /* const url = "https://striveschool-api.herokuapp.com/api/deezer/"
