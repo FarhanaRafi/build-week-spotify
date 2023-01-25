@@ -39,27 +39,14 @@ const renderCards = (tracks, section, playable, displayAll = false) => {
   let container = document.getElementById(section);
   console.log(tracks, section);
   let trackCards;
-  if (!playable) {
-    trackCards = tracks.map((track) => {
-      globalTracks.push(track);
-      return `<div class="col mb-4">
-        <div class="card h-100" id="${track.album.id}" onclick = "onCardClick(event)">
-          <img src="${track.album.cover_medium}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${track.album.title}</h5>
-            <p class="card-text text-muted mt-n2 "><small>${track.artist.name}</small></p>
-          </div>
-        </div>
-      </div>`;
-    });
-  } else {
-    trackCards = tracks.map((track) => {
-      globalTracks.push(track);
-      return `<div class="col mb-4">
+
+  trackCards = tracks.map((track) => {
+    globalTracks.push(track);
+    return `<div class="col mb-4">
         <div class="card h-100" id="${track.album.id}">
         <div class="play-btn-container">
-          <img src="${track.album.cover_medium}" class="card-img-top" alt="...">
-          <span class="play-btn text-success bg-transparent" onclick ="playTrack(${track.id})"><i class="bi bi-play-circle-fill"></i></span>
+          <img src="${track.album.cover_medium}" class="card-img-top" alt="..." onclick = "onCardClick(event)">
+          <span class="play-btn text-success bg-transparent" onclick ="playTrack(${track.id})"><i class="play-icon bi bi-play-circle-fill"></i></span>
         </div>
           <div class="card-body">
             <h5 class="card-title">${track.album.title}</h5>
@@ -67,8 +54,7 @@ const renderCards = (tracks, section, playable, displayAll = false) => {
           </div>
         </div>
       </div>`;
-    });
-  }
+  });
 
   container.innerHTML = trackCards.join("");
 };
