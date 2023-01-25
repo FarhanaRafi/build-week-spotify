@@ -1,3 +1,93 @@
+let url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+const spotifyDetails = document.getElementById("spotifyAlbumDetails")
+const spotifyTracks = document.getElementById("spotifyTracks")
+const params = new URLSearchParams(location.search);
+const id = params.get("id");
+console.log(id);
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "77cded920amsh41bb67a07527abep12c202jsn008eae99c17c",
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+  },
+};
+
+window.onload = () => {
+  getData();
+};
+
+const getData = async () => {
+  try {
+    let res = await fetch(url + id, options);
+    let data = await res.json();
+    console.log("data", data);
+    showAlbumDetails(data)
+    showTracks(data.tracks.data)
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+function showAlbumDetails(album) {
+  let albumDetails = document.createElement("div");
+  albumDetails.classList.add("createdFlex")
+
+    albumDetails.innerHTML += `<img src="${album.cover_medium}"/>
+    <div class="everWhat mx-4">
+      <div class="d-flex whatEver">
+        <h6>Album</h6>
+        <h3>${album.title}</h3>
+      </div>
+      <div class="d-flex align-items-baseline">
+        <div class="mx-1">
+          <img id="smallArtistIconPicture" src="${album.artist.picture}"/>
+        </div>
+        <div class="mx-1">
+         <p>${album.artist.name}</p>
+        </div>
+        <div class="mx-1">
+          <p>2018</p>
+          </div>
+        <div><p>${album.nb_tracks} Songs, </p>
+        </div>
+        <div class="mx-1">
+          <p>${Math.floor(album.duration/60)} hr ${album.duration-Math.floor(album.duration/60)*60} mins</p>
+        </div>
+        </div>
+      </div>
+    </div>`
+    spotifyDetails.appendChild(albumDetails)
+}
+
+function showTracks(tracks) {
+  tracks.forEach((track, index) => {
+    const tr = document.createElement("tr")
+    tr.innerHTML = `
+  
+    <td>${index + 1}</td>
+    <td>
+    <h3>${track.title}</h3> <p>${track.artist.name}</p>
+    </td>
+    <td>${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}</td>
+  
+  
+    `
+  
+  
+  
+  
+  
+    spotifyTracks.appendChild(tr)
+  })
+
+}
+
+/* const url = "https://striveschool-api.herokuapp.com/api/deezer/"
+
+const params = new URLSearchParams(location.search)
+const id = params.get("id")
+
+
 const options = {
   method: "GET",
   headers: {
@@ -8,12 +98,12 @@ const options = {
 let globalTracks = [];
 let audioPlayer = null;
 let selectedTrackIndex = null;
-const getTrackDetails = async (searchQuery) => {
+const getTrackDetails = async (id) => {
   try {
     let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-        searchQuery,
-      options
+      //"https://striveschool-api.herokuapp.com/api/deezer/search?q="
+        //searchQuery,
+        url + id, options
     );
     let tracks = await res.json();
     console.log(tracks);
@@ -97,6 +187,7 @@ const getSection = async (searchQuery, section, playable) => {
 
 // https://striveschool-api.herokuapp.com/api/deezer/search
 //https://striveschool-api.herokuapp.com/api/deezer/album/
+
 
 let spotifyDetails = document.getElementById("spotifyAlbumDetails")
 let spotify = document.getElementById("spotifyAlbum")
@@ -193,6 +284,7 @@ const renderAlbum = (fetchedAlbum, location) => {
 
 
 window.onload = function(){
+    
     getSpotify("Bohemian Rhapsody (The Original Soundtrack)")
     getSpotifyDetails("Bohemian Rhapsody (The Original Soundtrack)");
 
@@ -207,8 +299,9 @@ const id = params.get("id")
   getSpotify()
   getSpotifyDetails()
 }*/
-const onCardClick = (event) => {
+/*const onCardClick = (event) => {
   console.log(event)
   //let selectedArtistId = event.target.closest("p").id;
   //window.location.href = `./artist.html?id=${selectedArtistId}`;
 };
+*/
