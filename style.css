@@ -273,7 +273,21 @@ i:hover {
   position: absolute;
   font-size: 44px;
   bottom: 0;
-  right: 0;
+  left: 75%;
   visibility: visible;
   background-color: transparent;
+  transform: translateY(18px);
+   opacity:1;
+   transition: transform 400ms, opacity 400ms;
+}
+
+.play-icon:hover {
+  background-color: transparent;
+}
+
+.playlist{
+  font-size: 12px;
+}
+.playlist i{
+  font-size: 14px;
 }
