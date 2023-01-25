@@ -62,13 +62,14 @@ function showAlbumDetails(album) {
 function showTracks(tracks) {
   tracks.forEach((track, index) => {
     const tr = document.createElement("tr")
+
     tr.innerHTML = `
   
-    <td>${index + 1}</td>
-    <td>
-    <h3>${track.title}</h3> <p>${track.artist.name}</p>
+    <td class="col-2">${index + 1}</td>
+    <td class="col-8">
+    <p>${track.title}</p> <p class="text-muted">${track.artist.name}</p>
     </td>
-    <td>${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}</td>
+    <td class="col-2">${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}</td>
   
   
     `

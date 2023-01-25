@@ -22,34 +22,36 @@
 <body>
     <div class="container-fluid page-wrapper">
         <div class="row">
-            <div class="col-2 bg-dark d-block side-bar row">
+            <div class="col-2 d-block side-bar row">
+
+
 
                         <div class="d-flex justify-content-center">
-                            <img class="logo col-7 mt-3 mb-3" src="/assets/Spotify_Logo.png" alt="">
+                            <img class="logo col-10 mt-4 my-3" src="/assets/Spotify_Logo.png" alt="">
                         </div>
                     <div class="d-flex justify-content-center">
 
                             <div>
-                                <div>
+                                <button class="my-2 side-bar-text d-block align-items-center">
                                     <i class="bi bi-house-door-fill"></i>
                                     Home
-                                </div>
-                                <div>
+                                </button>
+                                <button class="my-2 side-bar-text side-bar-search d-block" onclick="searchBarVisible()">
                                     <i class="bi bi-search"></i>
                                     Search
-                                </div>
-                                <div>
+                                </button>
+                                <button class="my-2 side-bar-text d-block">
                                     <i class="bi bi-music-note-list"></i>
                                     Your Library
-                                </div>
-                                <div>
+                                </button>
+                                <button class="my-2 side-bar-text d-block">
                                     <i class="bi bi-plus-square-fill"></i>
                                     Create Playlist
-                                </div>
-                                <div>
+                                </button>
+                                <button class="my-2 side-bar-text d-block">
                                     <i class="bi bi-heart-fill"></i>
                                     Liked Songs
-                                </div>
+                                </button>
 
 
                                 <hr>
@@ -61,52 +63,48 @@
 
 
             </div>
-            <div class="container w-100 col-10 hero">
-                <div class="col-12 d-flex top-bar justify-content-between align-items-center hero">
+
+
+             <div class="container col-10" id="container">
+                <div class="col-12 d-flex top-bar justify-content-between align-items-center mt-2 mb-3" id="header">
                     <div class="topbar-btn-col row d-flex justify-content-between">
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-arrow-left-circle"></i>
+                            <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i>
                         </div>
                         <div class="col-1 d-flex align-items-center">
-                            <i class="bi bi-arrow-right-circle"></i>
+                            <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i>
                         </div>
-                        <div class="search-bar row col">
-                            <div class="input-group flex-nowrap">
+                        <div class="search-bar row col ml-4">
+                            <div class="input-group flex-nowrap d-none" id="input">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="addon-wrapping">
                                         <i class="bi bi-search"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="What do you want to listen to?"
-                                    aria-label="Username" aria-describedby="addon-wrapping">
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="topbar-user row hero">
-                        <div class="btn-group username-btn">
-                            <button type="button" class="btn btn-dark">
-                                <img class="user-img" src="/assets/avatar.png" alt="">
-                                Username
-                            </button>
-                            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
+                                <input type="text" id="search-input" class="form-control"
+                                    placeholder="What do you want to listen to?" aria-label="Username"
+                                    aria-describedby="addon-wrapping">
                             </div>
                         </div>
                     </div>
-
-
+                    <div class="topbar-user row ">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle rounded-pill text-white" id="button" type="button"
+                                data-toggle="dropdown"> <img class="user-img mr-2 ml-n2" src="/assets/avatar.png"
+                                    alt=""><span class="text-white mml-2">User Name</span>
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu bg-dark ">
+                                <li><a class="text-white" href="#">Action</a></li>
+                                <li><a class="text-white" href="#">CSS</a></li>
+                                <li><a class="text-white" href="#">JavaScript</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
+
+
+        
 
                 <div class="jumbotron jumbotron-fluid w-100 h-75">
                     <div id="spotifyAlbumDetails" class="ml-3" >
@@ -131,18 +129,21 @@
 
                     <div class="container-fluid d-block w-100">
                             <div class="row">
-                                <!--<div class="d-flex justify-content-between">-->
+                              
                                     <table class="table album_item table-borderless">
                                         <thead>
                                             <th>#</th>
-                                            <th>Title</th>
-                                            <th>duration</th>
+                                            <th >Title</th>
+                                            <th ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                              </svg></th>
                                         </thead>
                                         <tbody id="spotifyTracks">
                                         
                                         </tbody>
                                     </table>
-                                </div>
+                               
                             </div>
                     </div>
                 </div>
