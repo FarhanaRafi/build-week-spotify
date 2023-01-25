@@ -44,10 +44,10 @@ const renderCards = (tracks, section, playable, displayAll = false) => {
     globalTracks.push(track);
     return `<div class="col mb-4">
         <div class="card h-100" id="${track.album.id}">
-        <div class="play-btn-container">
-          <img src="${track.album.cover_medium}" class="card-img-top" alt="..." onclick = "onCardClick(event)">
-          <span class="play-btn text-success bg-transparent" onclick ="playTrack(${track.id})"><i class="play-icon bi bi-play-circle-fill"></i></span>
-        </div>
+          <div class="play-btn-container">
+            <img src="${track.album.cover_medium}" class="card-img-top" alt="..." onclick = "onCardClick(event)">
+            <span class="play-btn text-success bg-transparent" onclick ="playTrack(${track.id})"><i class="play-icon bi bi-play-circle-fill"></i></span>
+          </div>
           <div class="card-body">
             <h5 class="card-title">${track.album.title}</h5>
             <p class="card-text text-muted mt-n2"><small>${track.artist.name}</small></p>
