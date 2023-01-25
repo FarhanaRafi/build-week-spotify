@@ -17,7 +17,7 @@ let sections = [
 ];
 
 $(window).scroll(function () {
-  $(".top-bar").toggleClass("scrolled", $(this).scrollTop() > 310);
+  $(".top-bar").toggleClass("scrolled", $(this).scrollTop() > 320);
 });
 
 const getTrackDetails = async (searchQuery) => {
