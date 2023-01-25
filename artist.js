@@ -12,8 +12,7 @@ window.onload = () => {
 const getTrack = async (searchQuery) => {
   try {
     let res = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-        searchQuery,
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchQuery}`,
       options
     );
     let tracks = await res.json();

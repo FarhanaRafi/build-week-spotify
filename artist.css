@@ -4,6 +4,10 @@ body {
   height: 100vh;
 }
 
+.page-wrapper {
+  flex-grow: 1;
+}
+
 .logo {
   position: sticky;
   z-index: 1;
