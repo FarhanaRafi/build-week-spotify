@@ -1,20 +1,26 @@
 body {
-
+  margin: 0;
   color: white;
   height: 100vh;
 }
-.card{
-    border: none;
-    border-radius: 20px;
+
+.page-wrapper{
+  flex-grow:1;
+    background: rgb(228, 62, 62);
+    background: linear-gradient(180deg, rgb(213, 49, 23) 0%, rgba(18,18,18,1) 18%);
+}
+.card {
+  border: none;
+  border-radius: 20px;
 }
 
-
-.card img{
-    padding: 7px;
-    background-color: rgb(27, 27, 27);
+.card img {
+  padding: 7px;
+  background-color: rgb(27, 27, 27);
 }
 .card-body {
-  background-color: rgb(19, 19, 19);
+  background-color: rgb(27, 27, 27);
+  /* background-color: rgb(19, 19, 19); */
 }
 .card :hover {
   background-color: rgb(65, 64, 64);
@@ -23,7 +29,8 @@ body {
   background-color: rgb(65, 64, 64);
 }
 .card-title,
-.card-text {
+.card-text,
+.good-morning-singer {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -31,7 +38,7 @@ body {
 }
 
 .side-bar {
-  background-color: #111;
+  background-color: black;
   position: sticky;
   z-index: 1;
   top: 0;
@@ -39,10 +46,9 @@ body {
 }
 
 .side-bar-text {
-  background-color: #111;
+  background-color: black;
   opacity: 0.5;
   border: none;
-  /* background-color: #343a40; */
   color: white;
 }
 
@@ -60,48 +66,64 @@ hr {
   background-color: rgba(245, 245, 245, 0.192);
 }
 
+.arrow {
+  font-size: 25px;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 6px;
+}
+
+#button {
+  height: 39px;
+  background-color: #2c2f32;
+}
+
 .top-bar {
+  background-color: transparent; 
   position: sticky;
-  background-color: #111;
   z-index: 1;
   top: 0;
   height: 8vh;
 }
 
+.top-bar{
+  transition:100ms ease;
+  background:transparent;
+}
+.top-bar.scrolled{
+  background-color: #111;
+}
+
 .user-img {
-  width: 20px;
+  width: 30px;
   border-radius: 50%;
 }
 
-.search-bar {
-  visibility: hidden;
-}
-
 .good-morning-content {
-  background-color: rgba(245, 245, 245, 0.158);
+  background-color: rgb(27, 27, 27);
 }
 
 .music-player {
-     position: fixed;
-    bottom: 0;
-    --primary-color: #ddd;
-    --secondary-color: #999;
-    --green-color: #2d5;
-    --padding: 1em;
-    background-color: rgb(28, 27, 27);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15vh;
-    padding: var(--padding);
-    color: var(--primary-color);
-    z-index: 1;
+  position: fixed;
+  bottom: 0;
+  --primary-color: #ddd;
+  --secondary-color: #999;
+  --green-color: #2d5;
+  --padding: 1em;
+  background-color: rgb(28, 27, 27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  padding: var(--padding);
+  color: var(--primary-color);
+  z-index: 1;
 }
-i{
-    color: var(--secondary-color);
+i {
+  color: var(--secondary-color);
 }
-i:hover{
-    color: var(--primary-color);
+i:hover {
+  color: var(--primary-color);
 }
 .song-bar {
   position: absolute;
@@ -143,91 +165,7 @@ i:hover{
 }
 .title:hover,
 .artist:hover {
-    text-decoration: underline;
-}
-.artist{
-    color: var(--secondary-color);
-}
-.icons{
-    display: flex;
-    gap: 1em;
-}
-.progress-controller{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5em;
-    color: var(--secondary-color);
-}
-.control-buttons{
-    display: flex;
-    align-items: center;
-    gap: 2em;
-}
-.play-pause{
-    display: inline-block;
-    padding: 1em;
-    background-color: var(--primary-color);
-    color: #111;
-    border-radius: 50%;
-}
-.play-pause:hover{
-    transform: scale(1.1);
-    color: #111;
-}
-.progress-container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-}
-.progress-bar{
-    height: 4px;
-    border-radius: 10px;
-    width: 30%;
-    background-color: #ccc4;
-}
-.progress{
-    position: relative;
-    height: 100%;
-    width: 30%;
-    border-radius: 10px;
-    /* background-color: var(--secondary-color); */
-}
-.progress-bar:hover .progress{
-    background-color: var(--green-color);
-}
-.progress-bar:hover .progress::after{
-    content: "";
-    position: absolute;
-    --size: 1em;
-    width: var(--size);
-    height: var(--size);
-    right: 0;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    transform: translate(50%, calc(2px - 50%));
-}
-.other-features{
-    position: absolute;
-    right: var(--padding);
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-}
-.volume-bar{
-    display: flex;
-    align-items: center;
-    gap: .7em;
-}
-.volume-bar .progress-bar{
-    width: 6em;
-}
-.volume-bar .progress-bar:hover .progress::after{
-    --size: .8em;
+  text-decoration: underline;
 }
 .artist {
   color: var(--secondary-color);
@@ -279,7 +217,7 @@ i:hover{
   height: 100%;
   width: 30%;
   border-radius: 10px;
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
 }
 .progress-bar:hover .progress {
   background-color: var(--green-color);
@@ -314,25 +252,30 @@ i:hover{
   --size: 0.8em;
 }
 
-.play-btn-container{
- position: relative;
- background-color: transparent;
+.underline:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
-.play-btn{
-    position: absolute;
-    font-size: 34px;
-    bottom: 0;
-    right: 0;
-    visibility: hidden;
-    background-color: transparent;
+
+.play-btn-container {
+  position: relative;
+  background-color: transparent;
 }
-.card:hover .play-btn{
-    position: absolute;
-    font-size: 44px;
-    bottom: 0;
-    right: 0;
-    visibility: visible;
-    background-color: transparent;  
+.play-btn {
+  position: absolute;
+  font-size: 26px;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  background-color: transparent;
+}
+.card:hover .play-btn {
+  position: absolute;
+  font-size: 44px;
+  bottom: 0;
+  right: 0;
+  visibility: visible;
+  background-color: transparent;
 }
 
 .jumbotron{
@@ -433,9 +376,6 @@ td:hover {
   margin-inline: 10px;
 }
 
-.play-select:hover i{
-  display: 
-}
 
 .name-select:hover {
   text-decoration: underline;
