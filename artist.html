@@ -129,18 +129,22 @@
                 <h1></h1>
                 <p class="listeners"></p>
               </div>
-
-              <!-- there should be a div from here -->
-              <div class="lower-artist d-flex">
-                <div class="d-flex">
-                  <div>Play Button</div>
-                  <button>Follow</button>
-                  <p>...</p>
+            </div>
+            <!-- there should be a div from here -->
+            <div class="row tracks">
+              <div class="lower-artist d-flex col-12">
+                <div class="d-flex align-items-center">
+                  <div class="play-btn-2">
+                    <i
+                      class="bi bi-play-circle-fill text-success play-btn-2 mr-3"
+                    ></i>
+                  </div>
+                  <div class="follow-btn mx-2">Follow</div>
+                  <div><i class="bi bi-three-dots mx-2"></i></div>
                 </div>
               </div>
-            </div>
-            <div class="row tracks">
-              <div class="col-10 songlist">
+
+              <div class="col-9 songlist">
                 <h5>Popular</h5>
                 <table class="table table-borderless">
                   <tbody class="songlist-tbody">
@@ -154,7 +158,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="col artist-pick">
+              <div class="col-3 artist-pick">
                 <h5>Artist Pick</h5>
                 <div class="row container artist-pick-div">
                   <!-- <div class="col-2 p-0 d-flex align-items-center">
