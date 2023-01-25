@@ -1,6 +1,7 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/";
 const params = new URLSearchParams(location.search);
 const id = params.get("id");
+console.log(id);
 
 window.onload = async () => {
   let res = await fetch(url + id, options);
@@ -18,6 +19,11 @@ const options = {
 window.onload = () => {
   getTrack("guns");
 };
+
+//top-bar
+$(window).scroll(function () {
+  $(".top-bar").toggleClass("scrolled", $(this).scrollTop() > 500);
+});
 
 const getTrack = async (searchQuery) => {
   try {
@@ -45,7 +51,7 @@ const renderPlaylist = (arrayOfSongs) => {
         ${singleSong.id * 2} monthly listeners
         `;
   });
-
+  //song list
   let tbody = document.querySelector(".songlist-tbody");
   arrayOfSongs.forEach((singleSong) => {
     tbody.innerHTML += `
@@ -58,15 +64,16 @@ const renderPlaylist = (arrayOfSongs) => {
         </tr>
         `;
   });
-
+  //artist pick
   let artistpick = document.querySelector(".artist-pick-div");
   arrayOfSongs.slice(0, 1).forEach((singleSong) => {
     artistpick.innerHTML += `
-        <div class="col-2 p-0 d-flex align-items-center">
+        <div class="col p-0 d-flex align-items-center">
         <img src="${singleSong.album.cover_small}" alt="${singleSong.artist.name}">
         <div>
-        <p>Posted by ${singleSong.artist.name}</p>
-        <p><span>${singleSong.artist.name} Best Of<span><br>Playlist<p>
+        <p>Posted by ${singleSong.artist.name} <br>
+        <span>${singleSong.artist.name} Best Of<span><br>Playlist
+        </p>
         </div>
         `;
   });
