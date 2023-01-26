@@ -1,9 +1,31 @@
-let email = document.getElementById("inputEmail");
+const email = document.getElementById("inputEmail");
+const password = document.getElementById("inputPassword")
+const loginForm = document.getElementById("loginForm")
+const loginError = document.getElementById("loginError")
 
-if (email.target.value === "fakeemail@fake.com" && password.target.value === "fakefakefake123") {
-    goToFunction(event);
-}
+loginForm.addEventListener("submit", login)
 
-const goToFunction = () => {
+function login(event) {
+    event.preventDefault()
+    console.log(email.value)
+    console.log(password.value)
+
+    if (email.value !== "fakeemail@fake.com" || password.value !== "fake") {
+        showError()
+        return
+    }
+    window.location.href="/index.html"
+    
     
 }
+
+function showError() {
+    loginError.innerHTML = `
+    <div class="alert alert-danger" role="alert">
+    Incorrect username or password.
+    </div>
+    
+    `
+}
+
+

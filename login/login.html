@@ -29,7 +29,8 @@
                 <p class="font-weight-bold">To continue, log in to Spotify.</p>
 
                 <!--ADD ICONS TO BUTTONS-->
-                    
+                    <!--alert goes here-->
+                    <div id="loginError"></div>
                 <button type="button" class="btn btn-primary btn-lg btn-block">CONTINUE WITH FACEBOOK</button>
                 <button type="button" class="btn btn-secondary btn-lg btn-block">CONTINUE WITH APPLE</button>
 
@@ -38,22 +39,22 @@
 
 
 
-                <form>
+                <form id="loginForm">
                     <div class="form-group">
-                    <label for="exampleInputEmail1"></label>
+                    <label for="inputEmail"></label>
                     <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
-                    <label for="exampleInputPassword1"></label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="inputPassword"></label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                     </div>
                     <div class="d-flex justify-content-between">
                         <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
-                        <button type="button" class="btn btn-success">LOG IN</button>
+                        <button type="submit" class="btn btn-success">LOG IN</button>
                     </div>
                 </form>
 
