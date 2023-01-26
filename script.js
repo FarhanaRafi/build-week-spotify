@@ -94,6 +94,7 @@ const onPlayPause = (event) => {
   }
 };
 
+//music player track details
 const loadTrack = (selectedTrack) => {
   let image = document.getElementById("album-art");
   let title = document.getElementById("album-title");
@@ -118,6 +119,7 @@ const loadTrack = (selectedTrack) => {
   audioPlayer.play();
 };
 
+//time format
 const formatTime = (duration) => {
   let minutes = Math.floor(duration / 60);
   let seconds = duration % 60;
@@ -125,6 +127,7 @@ const formatTime = (duration) => {
   return `${minutes}:${seconds}`;
 };
 
+//good-morning section
 const renderGoodMorning = (arrayOfSongs) => {
   let container = document.querySelector(".good-morning-div");
   container.innerHTML = "";
@@ -138,11 +141,13 @@ const renderGoodMorning = (arrayOfSongs) => {
   });
 };
 
+//card fetching and rendering
 const getSection = async (searchQuery, section, playable) => {
   let tracks = await getTrackDetails(searchQuery);
   renderCards(tracks.slice(0, 5), section, playable);
 };
 
+//to album page
 const onCardClick = (event) => {
   let selectedAlbumId = event.target.closest(".card").id;
   window.location.href = `./album.html?id=${selectedAlbumId}`;
