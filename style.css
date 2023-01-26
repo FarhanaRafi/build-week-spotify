@@ -324,3 +324,7 @@ i:hover {
 .playlist i {
   font-size: 14px;
 }
+
+#search-input{
+  opacity: 0.4;
+}
