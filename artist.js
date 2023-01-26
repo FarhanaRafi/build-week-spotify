@@ -1,14 +1,7 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 const params = new URLSearchParams(location.search);
 const id = params.get("id");
 console.log(id);
-
-window.onload = async () => {
-  let res = await fetch(url + id, options);
-  console.log(res);
-  getTrack();
-};
-
 const options = {
   method: "GET",
   headers: {
@@ -16,8 +9,18 @@ const options = {
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
   },
 };
-window.onload = () => {
-  getTrack("guns");
+
+const extractName = async () => {
+  try {
+    let res = await fetch(url + id, options);
+    let tracks = await res.json();
+    console.log(tracks.name);
+    getTrack(tracks.name);
+  } catch (error) {}
+};
+
+window.onload = async () => {
+  extractName();
 };
 
 //top-bar
