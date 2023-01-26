@@ -43,6 +43,13 @@ const getTrack = async (searchQuery) => {
   }
 };
 
+const formatTime = (duration) => {
+  let minutes = Math.floor(duration / 60);
+  let seconds = duration % 60;
+
+  return `${minutes}:${seconds}`;
+};
+
 const renderPlaylist = (arrayOfSongs) => {
   let upperPartName = document.querySelector(".upper-artist h1");
   let listeners = document.querySelector(".listeners");
@@ -56,14 +63,14 @@ const renderPlaylist = (arrayOfSongs) => {
   });
   //song list
   let tbody = document.querySelector(".songlist-tbody");
-  arrayOfSongs.forEach((singleSong) => {
+  arrayOfSongs.forEach((singleSong, index) => {
     tbody.innerHTML += `
         <tr>
-        <th scope="row">#</th>
+        <th scope="row">${index + 1}</th>
         <td><img src="${singleSong.album.cover_small}" alt=""></td>            
         <td>${singleSong.title}</td>
         <td>${singleSong.album.id}</td>
-        <td>${singleSong.duration}</td>
+        <td>${formatTime(singleSong.duration)}</td>
         </tr>
         `;
   });
