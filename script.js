@@ -154,7 +154,7 @@ const loadSections = async () => {
   getSection("podcasts", "shows-to-try", true);
   getSection("mix", "exclusives", true);
 
-  const goodMorningTracks = await getTrackDetails("hits");
+  const goodMorningTracks = await getTrackDetails("morning");
   renderGoodMorning(goodMorningTracks);
 };
 
