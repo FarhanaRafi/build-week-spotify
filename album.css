@@ -280,6 +280,7 @@ i:hover {
 
 .jumbotron{
   background-color: transparent;
+  padding: 0;
 }
 .hero{
  background-color: transparent;
@@ -314,7 +315,7 @@ tr{
 
 .grey:hover{
   background-color: #313131;
-  border-radius: 25px;
+
 }
 
 .bi-play-circle{
@@ -358,6 +359,8 @@ z-index: 1;
 
 .table td {
   padding-inline: 2rem;
+  line-height: 0.3em;
+
 }
 
 .table th {
@@ -366,7 +369,7 @@ z-index: 1;
 
 td:hover {
   background-color: #313131;
-  border-radius: 25px;
+
 }
 
 /* this should highlight the specific row of the song and change bg to a light grey color */
@@ -379,4 +382,14 @@ td:hover {
 
 .name-select:hover {
   text-decoration: underline;
+}
+
+
+.text-muted:hover{
+  text-decoration: underline;
+}
+
+#album-art img{
+  height: 4em;
+  width: 4em;
 }
