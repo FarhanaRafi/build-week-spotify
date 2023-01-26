@@ -393,3 +393,25 @@ td {
 .play-btn-2:hover {
   transform: scale(1.1);
 }
+
+.playlist {
+  font-size: 12px;
+}
+.playlist i {
+  font-size: 14px;
+}
+
+tr:hover td {
+  color: #2d5;
+}
+tr th i {
+  display: none;
+}
+
+tr:hover th i {
+  display: initial;
+}
+
+tr:hover th span {
+  display: none;
+}
