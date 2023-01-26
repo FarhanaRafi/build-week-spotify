@@ -334,6 +334,7 @@ td {
 
 .play-btn-container {
   position: relative;
+  background-color: transparent;
 }
 .play-btn {
   position: absolute;
@@ -350,7 +351,11 @@ td {
   right: 0;
   visibility: visible;
   background-color: transparent;
+  transform: translateY(18px);
+  opacity: 1;
+  transition: transform 400ms, opacity 400ms;
 }
+
 .artist-pick-icon {
   font-size: 5px;
 }
@@ -387,7 +392,8 @@ td {
 }
 
 .play-btn-2 {
-  font-size: 40px;
+  font-size: 50px;
+  cursor: pointer;
 }
 
 .play-btn-2:hover {
@@ -399,6 +405,10 @@ td {
 }
 .playlist i {
   font-size: 14px;
+}
+
+tr:hover {
+  cursor: pointer;
 }
 
 tr:hover td {
@@ -414,4 +424,36 @@ tr:hover th i {
 
 tr:hover th span {
   display: none;
+}
+
+.artist-pick-content {
+  font-size: 8px;
+  color: rgba(245, 245, 245, 0.493);
+}
+
+.artist-pick-content span {
+  font-size: 12px;
+  color: rgba(245, 245, 245, 0.884);
+  font-weight: bold;
+}
+
+.listeners,
+.verified,
+th,
+td {
+  font-size: 13px;
+  color: rgba(245, 245, 245, 0.493);
+}
+
+.play-icon:hover {
+  background-color: transparent;
+}
+
+#table {
+  height: 30px;
+  overflow: hidden;
+}
+.songlist-tbody {
+  height: 30px;
+  overflow: hidden;
 }

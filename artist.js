@@ -38,6 +38,7 @@ const getTrack = async (searchQuery) => {
     console.log(tracks);
     renderPlaylist(tracks.data);
     renderAlbum(tracks.data);
+    getTrack(tracks.data);
   } catch (err) {
     console.log(err);
   }
@@ -51,40 +52,43 @@ const formatTime = (duration) => {
 };
 
 const renderPlaylist = (arrayOfSongs) => {
-  let upperPartName = document.querySelector(".upper-artist h1");
+  let upperPartName = document.querySelector("h1");
   let listeners = document.querySelector(".listeners");
   arrayOfSongs.forEach((singleSong) => {
-    upperPartName.innerText = `
-        ${singleSong.artist.name}
-        `;
+    upperPartName.innerText = `${singleSong.artist.name}`;
     listeners.innerText = `
-        ${singleSong.id * 2} monthly listeners
+        ${(singleSong.id * 2).toLocaleString("en-US")} monthly listeners
         `;
   });
   //song list
   let tbody = document.querySelector(".songlist-tbody");
-  arrayOfSongs.forEach((singleSong, index) => {
+  arrayOfSongs.slice(0, 5).forEach((singleSong, index) => {
     tbody.innerHTML += `
-        <tr>
-        <th scope="row"><i class="bi bi-bar-chart-fill text-success"></i><span>${
+        <tr class="row d-flex justify-content-center">
+        <th class="col-1" scope="row"><i class="bi bi-bar-chart-fill text-success"></i><span>${
           index + 1
         }</span></th>
-        <td><img src="${singleSong.album.cover_small}" alt=""></td>            
-        <td>${singleSong.title}</td>
-        <td>${singleSong.album.id}</td>
-        <td>${formatTime(singleSong.duration)}</td>
+        <td class="col-2"><img src="${
+          singleSong.album.cover_small
+        }" alt=""></td>            
+        <td class="col-4">${singleSong.title}</td>
+        <td class="col-2">${singleSong.album.id.toLocaleString("en-US")}</td>
+        <td class="col-2">${formatTime(singleSong.duration)}</td>
         </tr>
         `;
   });
+
+  //see more
+
   //artist pick
   let artistpick = document.querySelector(".artist-pick-div");
   arrayOfSongs.slice(0, 1).forEach((singleSong) => {
     artistpick.innerHTML += `
         <div class="col p-0 d-flex align-items-center">
         <img src="${singleSong.album.cover_small}" alt="${singleSong.artist.name}">
-        <div>
+        <div class="artist-pick-content ml-2 mt-3">
         <p>Posted by ${singleSong.artist.name} <br>
-        <span>${singleSong.artist.name} Best Of<span><br>Playlist
+        <span>${singleSong.artist.name} Best Of</span><br>Playlist
         </p>
         </div>
         `;
@@ -98,7 +102,7 @@ const renderPlaylist = (arrayOfSongs) => {
         <div class="card h-100" id="${singleSong.album.id}">
         <div class="play-btn-container">
           <img src="${singleSong.album.cover_medium}" class="card-img-top" alt="...">
-          <span class="play-btn text-success" onclick ="playTrack(${singleSong.id})"><i class="bi bi-play-circle-fill"></i></span>
+          <span class="play-btn text-success" onclick ="playTrack(${singleSong.id})"><i class="play-icon bi bi-play-circle-fill"></i></span>
         </div>
           <div class="card-body">
             <h5 class="card-title">${singleSong.album.title}</h5>
@@ -110,7 +114,7 @@ const renderPlaylist = (arrayOfSongs) => {
         <div class="card h-100" id="${singleSong.album.id}">
         <div class="play-btn-container">
           <img src="${singleSong.album.cover_medium}" class="card-img-top" alt="...">
-          <span class="play-btn text-success" onclick ="playTrack(${singleSong.id})"><i class="bi bi-play-circle-fill"></i></span>
+          <span class="play-btn text-success" onclick ="playTrack(${singleSong.id})"><i class="play-icon bi bi-play-circle-fill"></i></span>
         </div>
           <div class="card-body">
             <h5 class="card-title">${singleSong.album.title}</h5>
@@ -123,7 +127,7 @@ const renderPlaylist = (arrayOfSongs) => {
         <div class="card h-100" id="${singleSong.album.id}">
         <div class="play-btn-container">
           <img src="${singleSong.album.cover_medium}" class="card-img-top" alt="...">
-          <span class="play-btn text-success" onclick ="playTrack(${singleSong.id})"><i class="bi bi-play-circle-fill"></i></span>
+          <span class="play-btn text-success" onclick ="playTrack(${singleSong.id})"><i class="play-icon bi bi-play-circle-fill"></i></span>
         </div>
           <div class="card-body">
             <h5 class="card-title">${singleSong.album.title}</h5>
@@ -137,4 +141,15 @@ const renderPlaylist = (arrayOfSongs) => {
   arrayOfSongs.forEach((singleSong) => {
     background.style.backgroundImage = `url('${singleSong.album.cover_xl}')`;
   });
+};
+
+const playPauseBtn = (event) => {
+  let button = event.target;
+  if (button.classList.contains("bi-play-circle-fill")) {
+    button.classList.remove("bi-play-circle-fill");
+    button.classList.add("bi-pause-circle-fill");
+  } else {
+    button.classList.remove("bi-pause-circle-fill");
+    button.classList.add("bi-play-circle-fill");
+  }
 };
