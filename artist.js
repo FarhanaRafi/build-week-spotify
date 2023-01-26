@@ -66,7 +66,9 @@ const renderPlaylist = (arrayOfSongs) => {
   arrayOfSongs.forEach((singleSong, index) => {
     tbody.innerHTML += `
         <tr>
-        <th scope="row">${index + 1}</th>
+        <th scope="row"><i class="bi bi-bar-chart-fill text-success"></i><span>${
+          index + 1
+        }</span></th>
         <td><img src="${singleSong.album.cover_small}" alt=""></td>            
         <td>${singleSong.title}</td>
         <td>${singleSong.album.id}</td>
