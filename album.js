@@ -1,6 +1,12 @@
-let url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 const spotifyDetails = document.getElementById("spotifyAlbumDetails")
 const spotifyTracks = document.getElementById("spotifyTracks")
+const musicPlayer = document.getElementById("musicPlayer")
+const albumArt = document.getElementById("album-art")
+const albumArtist = document.getElementById("album-artist")
+const albumTitle = document.getElementById("album-title")
+const timeOver = document.getElementById("time-over")
+const timeRemaining = document.getElementById("time-remaining")
 const params = new URLSearchParams(location.search);
 const id = params.get("id");
 console.log(id);
@@ -32,7 +38,7 @@ function showAlbumDetails(album) {
   let albumDetails = document.createElement("div");
   albumDetails.classList.add("createdFlex")
 
-    albumDetails.innerHTML += `<img src="${album.cover_medium}"/>
+    albumDetails.innerHTML += `<img class="mt-0 "src="${album.cover_medium}"/>
     <div class="everWhat mx-4">
       <div class="d-flex whatEver">
         <h6>Album</h6>
@@ -57,6 +63,20 @@ function showAlbumDetails(album) {
       </div>
     </div>`
     spotifyDetails.appendChild(albumDetails)
+
+    albumArt.innerHTML = `
+    <img src="${album.cover_medium}"/>
+
+    ` 
+    albumTitle.innerHTML = `
+    ${album.title}
+    `
+    albumArtist.innerHTML = `
+    <p onclick="onClickArtist(${album.artist.id})">${album.artist.name}</p>
+
+    `
+
+   
 }
 
 
@@ -69,21 +89,25 @@ function showAlbumDetails(album) {
 function showTracks(tracks) {
   tracks.forEach((track, index) => {
     const tr = document.createElement("tr")
-
+    tr.classList.add("grey")
     tr.innerHTML = `
   
-    <td class="col-2">${index + 1}</td>
-    <td class="col-8">
+    <td >${index + 1}</td>
+    <td class="col-9">
     <p>${track.title}</p> <p class="text-muted" onclick="onClickArtist(${track.artist.id})">${track.artist.name}</p>
     </td>
-    <td class="col-2">${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}</td>
+    <td >${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}</td>
   
   
     `
   
   
-  
-  
+   timeOver.innerHTML =`
+   ${Math.floor(track.duration/200)}:${track.duration-Math.floor(track.duration/60)*60}
+   `
+    timeRemaining.innerHTML = `
+    ${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}
+    `
   
     spotifyTracks.appendChild(tr)
   })
