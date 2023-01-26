@@ -23,6 +23,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/spotify1.ico">
     <link rel="stylesheet" href="./artist.css" />
   </head>
 
@@ -229,11 +230,11 @@
         </div>
       </div>
       <div class="progress-controller">
-        <div class="control-buttons">
+        <div class="control-buttons mt-4">
           <i class="fas fa-random"></i>
-          <i class="fas fa-step-backward"></i>
-          <i class="play-pause fas fa-play"></i>
-          <i class="fas fa-step-forward"></i>
+          <i class="fas fa-step-backward" onclick="onClickPrev()"></i>
+          <i id="play-pause-btn" onclick="onPlayPause(event)" class="play-pause fas fa-play"></i>
+          <i class="fas fa-step-forward" onclick="onClickNext()"></i>
           <i class="fas fa-undo-alt"></i>
         </div>
         <div class="progress-container">

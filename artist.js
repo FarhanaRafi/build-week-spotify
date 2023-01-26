@@ -2,6 +2,11 @@ const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 const params = new URLSearchParams(location.search);
 const id = params.get("id");
 console.log(id);
+
+let globalTracks = [];
+let audioPlayer = null;
+let selectedTrackIndex = null;
+
 const options = {
   method: "GET",
   headers: {
@@ -63,8 +68,11 @@ const renderPlaylist = (arrayOfSongs) => {
   //song list
   let tbody = document.querySelector(".songlist-tbody");
   arrayOfSongs.slice(0, 5).forEach((singleSong, index) => {
+    globalTracks.push(singleSong);
     tbody.innerHTML += `
-        <tr class="row d-flex justify-content-center">
+        <tr class="row d-flex justify-content-center" onclick ="playTrack(${
+          singleSong.id
+        })">
         <th class="col-1" scope="row"><i class="bi bi-bar-chart-fill text-success"></i><span>${
           index + 1
         }</span></th>
@@ -148,8 +156,71 @@ const playPauseBtn = (event) => {
   if (button.classList.contains("bi-play-circle-fill")) {
     button.classList.remove("bi-play-circle-fill");
     button.classList.add("bi-pause-circle-fill");
+    let selectedTrack = globalTracks[0];
+    loadTrack(selectedTrack);
   } else {
     button.classList.remove("bi-pause-circle-fill");
     button.classList.add("bi-play-circle-fill");
+    audioPlayer.pause();
+  }
+};
+
+//music player track details
+const loadTrack = (selectedTrack) => {
+  let image = document.getElementById("album-art");
+  let title = document.getElementById("album-title");
+  let artistName = document.getElementById("album-artist");
+  let time = document.getElementById("time-over");
+  let duration = document.getElementById("time-remaining");
+
+  image.src = selectedTrack.album.cover_small;
+  title.innerText = selectedTrack.album.title;
+  artistName.innerText = selectedTrack.artist.name;
+  duration.innerText = formatTime(selectedTrack.duration);
+  console.log(selectedTrack);
+  console.log(selectedTrack.preview);
+  if (audioPlayer != null) {
+    audioPlayer.pause();
+  }
+
+  let button = document.getElementById("play-pause-btn");
+  button.classList.remove("fa-play");
+  button.classList.add("fa-pause");
+  audioPlayer = new Audio(selectedTrack.preview);
+  audioPlayer.play();
+};
+
+//find track index
+const playTrack = (trackId) => {
+  selectedTrackIndex = globalTracks.findIndex((track) => track.id === trackId);
+  let selectedTrack = globalTracks[selectedTrackIndex];
+  loadTrack(selectedTrack);
+};
+
+//on click next on play track
+const onClickNext = () => {
+  selectedTrackIndex++;
+  let selectedTrack = globalTracks[selectedTrackIndex];
+  loadTrack(selectedTrack);
+};
+
+//on click previous on play track
+const onClickPrev = () => {
+  selectedTrackIndex--;
+  let selectedTrack = globalTracks[selectedTrackIndex];
+  loadTrack(selectedTrack);
+};
+
+//pause and play
+const onPlayPause = (event) => {
+  let button = event.target;
+  if (button.classList.contains("fa-play")) {
+    button.classList.remove("fa-play");
+    button.classList.add("fa-pause");
+    loadTrack(globalTracks[selectedTrackIndex]);
+  } else {
+    button.classList.remove("fa-pause");
+    button.classList.add("fa-play");
+    audioPlayer.pause();
   }
 };
