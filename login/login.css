@@ -1,13 +1,50 @@
 body {
+    margin: 0;
     text-align: center;
+    font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, sans-serif, Helvetica, Arial, sans-serif; /* change */
 }
 
+.btn-text {
+    font-size: small;
+}
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.btn {
+    line-height: 1;
+    border-radius: 32px;
+    height: 6%;
+}
+
+#fb-btn {
+    background-color: rgb(64,90,147);
+}
+
+#apl-btn {
+    background-color: black;
+}
+
+/* .center { */
+    /* display: block; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+
+#emailHelp {
+    margin-bottom: -2em;
+}
+
+.forgot-link {
+    color: green;
+}
+
+.forgot-link:hover {
+    color: green;
+}
+
+#log-btn {
+    width: 13em;
+    height: 3em;
+    font-size: small;
+    margin-bottom: 1.6em;
+}
 
 img {
     background: black;
