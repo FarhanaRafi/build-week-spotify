@@ -22,6 +22,10 @@ window.onload = () => {
   getData();
 };
 
+$(window).scroll(function () {
+  $(".top-bar").toggleClass("scrolled", $(this).scrollTop() > 320);
+});
+
 const getData = async () => {
   try {
     let res = await fetch(url + id, options);
