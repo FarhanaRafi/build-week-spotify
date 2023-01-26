@@ -66,18 +66,21 @@ const playTrack = (trackId) => {
   loadTrack(selectedTrack);
 };
 
+//on click next on play track
 const onClickNext = () => {
   selectedTrackIndex++;
   let selectedTrack = globalTracks[selectedTrackIndex];
   loadTrack(selectedTrack);
 };
 
+//on click previous on play track
 const onClickPrev = () => {
   selectedTrackIndex--;
   let selectedTrack = globalTracks[selectedTrackIndex];
   loadTrack(selectedTrack);
 };
 
+//pause and play
 const onPlayPause = (event) => {
   let button = event.target;
   if (button.classList.contains("fa-play")) {
