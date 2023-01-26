@@ -35,6 +35,7 @@ const getTrackDetails = async (searchQuery) => {
   }
 };
 
+//render cards
 const renderCards = (tracks, section, playable, displayAll = false) => {
   let container = document.getElementById(section);
   console.log(tracks, section);
@@ -55,10 +56,10 @@ const renderCards = (tracks, section, playable, displayAll = false) => {
         </div>
       </div>`;
   });
-
   container.innerHTML = trackCards.join("");
 };
 
+//find track index
 const playTrack = (trackId) => {
   selectedTrackIndex = globalTracks.findIndex((track) => track.id === trackId);
   let selectedTrack = globalTracks[selectedTrackIndex];
