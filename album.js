@@ -121,6 +121,17 @@ function onClickArtist(artistId) {
   window.location.href = `./artist.html?id=${artistId}`;
 }
 
+const playPauseBtn = (event) => {
+  let button = event.target;
+  if (button.classList.contains("bi-play-circle-fill")) {
+    button.classList.remove("bi-play-circle-fill");
+    button.classList.add("bi-pause-circle-fill");
+  } else {
+    button.classList.remove("bi-pause-circle-fill");
+    button.classList.add("bi-play-circle-fill");
+  }
+};
+
 /* const url = "https://striveschool-api.herokuapp.com/api/deezer/"
 
 const params = new URLSearchParams(location.search)

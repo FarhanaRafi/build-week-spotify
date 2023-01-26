@@ -393,3 +393,20 @@ tr:hover {
   height: 4em;
   width: 4em;
 }
+
+.play-btn-2 {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.play-btn-2:hover {
+  transform: scale(1.1);
+}
+
+.playlist {
+  font-size: 12px;
+}
+
+.playlist i {
+  font-size: 14px;
+}
