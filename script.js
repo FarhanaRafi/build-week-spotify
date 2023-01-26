@@ -153,6 +153,7 @@ const onCardClick = (event) => {
   window.location.href = `./album.html?id=${selectedAlbumId}`;
 };
 
+//load section
 const loadSections = async () => {
   document.getElementById("input").classList.add("d-none");
   sections.forEach((section) => {
@@ -167,6 +168,7 @@ const loadSections = async () => {
   renderGoodMorning(goodMorningTracks);
 };
 
+//on click show all to render all cards
 const showAll = async (section, searchQuery) => {
   console.log(section);
   let tracks = await getTrackDetails(searchQuery);
@@ -179,10 +181,12 @@ const showAll = async (section, searchQuery) => {
   renderCards(tracks, section.substring(0, section.length - 4), true, true);
 };
 
+//to make search btn visible
 const searchBarVisible = () => {
   document.getElementById("input").classList.remove("d-none");
 };
 
+//search musics
 const searchMusic = async () => {
   let search = document.querySelector("#search-input").value;
   if (search.length >= 4) {
