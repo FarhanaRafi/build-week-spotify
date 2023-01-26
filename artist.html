@@ -149,20 +149,25 @@
             </div>
 
             <!-- content box -->
-            <div class="container-fluid px-0 mx-0 d-block">
-              <div class="upper-artist">
-                <p>Verified Artist</p>
+            <div class="container-fluid px-0 mx-0 mt-5 d-block">
+              <div class="upper-artist d-flex flex-column ml-4">
+                <p class="mb-0 mt-5 verified">
+                  <i class="bi bi-patch-check-fill text-primary"></i> Verified
+                  Artist
+                </p>
                 <h1></h1>
                 <p class="listeners"></p>
               </div>
             </div>
             <!-- there should be a div from here -->
             <div class="row tracks">
-              <div class="lower-artist d-flex col-12">
+              <div class="lower-artist d-flex col-12 ml-4 mt-4">
                 <div class="d-flex align-items-center">
                   <div class="play-btn-2">
                     <i
                       class="bi bi-play-circle-fill text-success play-btn-2 mr-3"
+                      id="playPause"
+                      onclick="playPauseBtn(event)"
                     ></i>
                   </div>
                   <div class="follow-btn mx-2">Follow</div>
@@ -170,31 +175,18 @@
                 </div>
               </div>
 
-              <div class="col-9 songlist">
+              <div class="col-9 songlist ml-4 mt-3">
                 <h5>Popular</h5>
-                <table class="table table-borderless">
-                  <tbody class="songlist-tbody">
-                    <!-- <tr>
-                            <th scope="row">#</th>
-                            <td><img src="${singleSong.cover_small}" alt=""></td>
-                            <td>Title</td>
-                            <td>plays</td>
-                            <td>duration</td>
-                        </tr> -->
-                  </tbody>
+                <table class="table table-borderless" id="table">
+                  <tbody class="songlist-tbody"></tbody>
                 </table>
+                <div onclick="seeMore()" id="seeMore">see more</div>
               </div>
-              <div class="col-3 artist-pick">
+              <div class="col-2 artist-pick mt-3">
                 <h5>Artist Pick</h5>
-                <div class="row container artist-pick-div">
-                  <!-- <div class="col-2 p-0 d-flex align-items-center">
-                        <img class="col-5 pl-0 good-morning-img" src="" alt="img">
-                        <div>Posted by artist</div>
-                        <div></div>
-                    </div> -->
-                </div>
+                <div class="row container artist-pick-div"></div>
               </div>
-              <div class="container">
+              <div class="container ml-5 mt-5">
                 <div class="row">
                   <h5>Popular releases</h5>
                   <div class="popular row"></div>
