@@ -103,6 +103,10 @@ hr {
   background-color: rgb(27, 27, 27);
 }
 
+.good-morning-content:hover{
+  background-color: rgb(65, 64, 64);
+}
+
 .music-player {
   position: fixed;
   bottom: 0;
