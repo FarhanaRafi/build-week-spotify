@@ -1,12 +1,12 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
-const spotifyDetails = document.getElementById("spotifyAlbumDetails")
-const spotifyTracks = document.getElementById("spotifyTracks")
-const musicPlayer = document.getElementById("musicPlayer")
-const albumArt = document.getElementById("album-art")
-const albumArtist = document.getElementById("album-artist")
-const albumTitle = document.getElementById("album-title")
-const timeOver = document.getElementById("time-over")
-const timeRemaining = document.getElementById("time-remaining")
+const spotifyDetails = document.getElementById("spotifyAlbumDetails");
+const spotifyTracks = document.getElementById("spotifyTracks");
+const musicPlayer = document.getElementById("musicPlayer");
+const albumArt = document.getElementById("album-art");
+const albumArtist = document.getElementById("album-artist");
+const albumTitle = document.getElementById("album-title");
+const timeOver = document.getElementById("time-over");
+const timeRemaining = document.getElementById("time-remaining");
 const params = new URLSearchParams(location.search);
 const id = params.get("id");
 console.log(id);
@@ -23,7 +23,7 @@ window.onload = () => {
 };
 
 $(window).scroll(function () {
-  $(".top-bar").toggleClass("scrolled", $(this).scrollTop() > 320);
+  $(".top-bar").toggleClass("scrolled", $(this).scrollTop() > 490);
 });
 
 const getData = async () => {
@@ -31,8 +31,8 @@ const getData = async () => {
     let res = await fetch(url + id, options);
     let data = await res.json();
     console.log("data", data);
-    showAlbumDetails(data)
-    showTracks(data.tracks.data)
+    showAlbumDetails(data);
+    showTracks(data.tracks.data);
   } catch (err) {
     console.log(err);
   }
@@ -40,9 +40,9 @@ const getData = async () => {
 
 function showAlbumDetails(album) {
   let albumDetails = document.createElement("div");
-  albumDetails.classList.add("createdFlex")
+  albumDetails.classList.add("createdFlex");
 
-    albumDetails.innerHTML += `<img class="mt-0 "src="${album.cover_medium}"/>
+  albumDetails.innerHTML += `<img class="mt-0 "src="${album.cover_medium}"/>
     <div class="everWhat mx-4">
       <div class="d-flex whatEver">
         <h6>Album</h6>
@@ -61,61 +61,60 @@ function showAlbumDetails(album) {
         <div><p>${album.nb_tracks} Songs, </p>
         </div>
         <div class="mx-1">
-          <p>${Math.floor(album.duration/60)} hr ${album.duration-Math.floor(album.duration/60)*60} mins</p>
+          <p>${Math.floor(album.duration / 60)} hr ${
+    album.duration - Math.floor(album.duration / 60) * 60
+  } mins</p>
         </div>
         </div>
       </div>
-    </div>`
-    spotifyDetails.appendChild(albumDetails)
+    </div>`;
+  spotifyDetails.appendChild(albumDetails);
 
-    albumArt.innerHTML = `
+  albumArt.innerHTML = `
     <img src="${album.cover_medium}"/>
 
-    ` 
-    albumTitle.innerHTML = `
+    `;
+  albumTitle.innerHTML = `
     ${album.title}
-    `
-    albumArtist.innerHTML = `
+    `;
+  albumArtist.innerHTML = `
     <p onclick="onClickArtist(${album.artist.id})">${album.artist.name}</p>
 
-    `
-
-   
+    `;
 }
-
-
-
-
-
-
-
 
 function showTracks(tracks) {
   tracks.forEach((track, index) => {
-    const tr = document.createElement("tr")
-    tr.classList.add("grey")
+    const tr = document.createElement("tr");
+    tr.classList.add("grey");
     tr.innerHTML = `
   
     <td >${index + 1}</td>
     <td class="col-9">
-    <p>${track.title}</p> <p class="text-muted" onclick="onClickArtist(${track.artist.id})">${track.artist.name}</p>
+    <p>${track.title}</p> <p class="text-muted" onclick="onClickArtist(${
+      track.artist.id
+    })">${track.artist.name}</p>
     </td>
-    <td >${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}</td>
+    <td >${Math.floor(track.duration / 60)}:${
+      track.duration - Math.floor(track.duration / 60) * 60
+    }</td>
   
   
-    `
-  
-  
-   timeOver.innerHTML =`
-   ${Math.floor(track.duration/200)}:${track.duration-Math.floor(track.duration/60)*60}
-   `
-    timeRemaining.innerHTML = `
-    ${Math.floor(track.duration/60)}:${track.duration-Math.floor(track.duration/60)*60}
-    `
-  
-    spotifyTracks.appendChild(tr)
-  })
+    `;
 
+    timeOver.innerHTML = `
+   ${Math.floor(track.duration / 200)}:${
+      track.duration - Math.floor(track.duration / 60) * 60
+    }
+   `;
+    timeRemaining.innerHTML = `
+    ${Math.floor(track.duration / 60)}:${
+      track.duration - Math.floor(track.duration / 60) * 60
+    }
+    `;
+
+    spotifyTracks.appendChild(tr);
+  });
 }
 function onClickArtist(artistId) {
   window.location.href = `./artist.html?id=${artistId}`;
