@@ -339,4 +339,7 @@ i:hover {
 
 #search-input{
   opacity: 0.4;
+  margin-left: -15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
