@@ -10,7 +10,7 @@ function login(event) {
     console.log(email.value)
     console.log(password.value)
 
-    if (email.value !== "fakeemail@fake.com" || password.value !== "fake") {
+    if (email.value !== "johndoe@xyz.com" || password.value !== "abcd") {
         showError()
         return
     }
@@ -22,7 +22,7 @@ function login(event) {
 function showError() {
     loginError.innerHTML = `
     <div class="alert alert-danger" role="alert">
-    Incorrect username or password.
+    <i class="bi bi-exclamation-diamond-fill"></i> Incorrect username or password.
     </div>
     
     `
