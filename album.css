@@ -340,9 +340,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 50%, rgba(46,23,40,1) 80%, rgba
 }
 
 
-.table td {
-  padding-inline: 2em
-}
+
 .table th {
   padding-inline: 2em
 }
@@ -363,12 +361,11 @@ z-index: 1;
 
 }
 
-.table th {
-  padding-inline: 2rem;
-}
+
 
 tr:hover {
   background-color: #313131;
+
 
 }
 
@@ -387,6 +384,7 @@ tr:hover {
 
 .text-muted:hover{
   text-decoration: underline;
+  cursor: pointer
 }
 
 #album-art img{
@@ -409,4 +407,68 @@ tr:hover {
 
 .playlist i {
   font-size: 14px;
+}
+
+h6 {
+  font-size: 0.8em
+
+}
+
+h3{
+  font-size: 2.5em;
+font-weight: 700;
+}
+
+.artistNameTop{
+  font-weight: bold;
+}
+.artistNameTop:hover {
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+.table{
+  margin-bottom: 10rem
+}
+
+
+tr:first-of-type{
+ background-color: inherit
+}
+
+
+.volume-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.volume-bar .progress-bar {
+  width: 6em;
+}
+.volume-bar .progress-bar:hover .progress::after {
+  --size: 0.8em;
+}
+
+tr:hover {
+  cursor: pointer;
+}
+
+tr:hover .progressBar {
+  color:white
+}
+tr td i {
+  display: none;
+}
+
+tr:hover td i {
+  display: initial;
+}
+
+tr:hover td span {
+  display: none;
+}
+
+.smallPlay{
+  height: 5em;
 }

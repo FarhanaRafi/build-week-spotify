@@ -45,7 +45,7 @@ function showAlbumDetails(album) {
   albumDetails.innerHTML += `<img class="mt-0 "src="${album.cover_medium}"/>
     <div class="everWhat mx-4">
       <div class="d-flex whatEver">
-        <h6>Album</h6>
+        <h6>ALBUM</h6>
         <h3>${album.title}</h3>
       </div>
       <div class="d-flex align-items-baseline">
@@ -53,16 +53,19 @@ function showAlbumDetails(album) {
           <img id="smallArtistIconPicture" src="${album.artist.picture}"/>
         </div>
         <div class="mx-1">
-         <a>${album.artist.name}</a>
+         <p class="artistNameTop" onclick="onClickArtist(${
+          album.artist.id
+        })">${album.artist.name}</p>
         </div>
         <div class="mx-1">
-          <p>2018</p>
+          <p>&#8729 2018 &#8729</p>
           </div>
         <div><p>${album.nb_tracks} Songs, </p>
         </div>
         <div class="mx-1">
-          <p>${Math.floor(album.duration / 60)} hr ${
-    album.duration - Math.floor(album.duration / 60) * 60
+          <p>${Math.floor(album.duration / 3600)} hr ${
+            convertTime(album.duration)
+
   } mins</p>
         </div>
         </div>
@@ -83,13 +86,30 @@ function showAlbumDetails(album) {
     `;
 }
 
+function convertTime(sec) {
+  var hours = Math.floor(sec/3600);
+  (hours >= 1) ? sec = sec - (hours * 3600) : hours = '00';
+  var min = Math.floor(sec/60);
+  (min >= 1) ? sec = sec - (min * 60) : min = '00';
+  (sec < 1) ? sec='00' : void 0;
+
+  (min.toString().length == 1) ? min = '0'+min : void 0;
+  (sec.toString().length == 1) ? sec = '0'+sec : void 0;
+
+  return min
+}
+
+
+
 function showTracks(tracks) {
   tracks.forEach((track, index) => {
     const tr = document.createElement("tr");
     tr.classList.add("grey");
     tr.innerHTML = `
   
-    <td >${index + 1}</td>
+    <td class="col-1 progressBar" scope="row"><i class="bi bi-play-fill fa-lg smallPlay "></i><span>${
+      index + 1
+    }</span></td>
     <td class="col-9">
     <p>${track.title}</p> <p class="text-muted" onclick="onClickArtist(${
       track.artist.id
