@@ -41,7 +41,7 @@
               src="/assets/Spotify_Logo.png"
               alt=""
             />
-            <a href="index.html">
+            <a id="home-btn" href="index.html">
               <button class="my-2 side-bar-text d-block align-items-center">
                 <i class="bi bi-house-door-fill"></i>
                 Home
@@ -99,29 +99,32 @@
             <div
               class="col-12 d-flex top-bar justify-content-between align-items-center"
             >
-              <div class="topbar-btn-col row d-flex justify-content-between">
-                <div class="col-1 d-flex align-items-center">
+              <div
+                class="topbar-btn-col row d-flex justify-content-between mt-4"
+              >
+                <div class="col-1 d-flex align-items-center arrow-bg">
                   <i
                     class="bi bi-chevron-left arrow"
                     onclick="loadSections()"
                   ></i>
                 </div>
-                <div class="col-1 d-flex align-items-center">
+                <div class="col-1 d-flex align-items-center arrow-bg">
                   <i
                     class="bi bi-chevron-right arrow"
                     onclick="loadSections()"
                   ></i>
                 </div>
-                <div class="search-bar row col">
-                  <div class="input-group flex-nowrap">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="addon-wrapping">
-                        <i class="bi bi-search"></i>
-                      </span>
-                    </div>
+                <div class="search-bar row col ml-4">
+                  <div class="input-group flex-nowrap d-none" id="input">
+                    <!-- <div class="input-group-prepend">
+                          <span class="input-group-text" id="addon-wrapping">
+                              <i class="bi bi-search"></i>
+                          </span>
+                      </div> -->
                     <input
                       type="text"
-                      class="form-control"
+                      id="search-input"
+                      class="form-control rounded-pill"
                       placeholder="What do you want to listen to?"
                       aria-label="Username"
                       aria-describedby="addon-wrapping"
@@ -129,7 +132,7 @@
                   </div>
                 </div>
               </div>
-              <div class="topbar-user row">
+              <div class="topbar-user row mt-4">
                 <div class="dropdown">
                   <button
                     class="btn dropdown-toggle rounded-pill text-white"
@@ -141,7 +144,7 @@
                       class="user-img mr-2 ml-n2"
                       src="/assets/avatar.png"
                       alt=""
-                    /><span class="text-white mml-2">Fake User</span>
+                    /><span class="text-white mml-2">John Doe</span>
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu bg-dark">

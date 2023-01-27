@@ -33,6 +33,10 @@ body {
   cursor: pointer;
 }
 
+#home-btn {
+  text-decoration: none;
+}
+
 hr {
   background-color: rgba(245, 245, 245, 0.192);
 }
@@ -55,10 +59,23 @@ hr {
 }
 
 .arrow {
-  font-size: 25px;
+  font-size: 22px;
   cursor: pointer;
+  /* margin-right: 20px;
+  margin-left: 6px; */
+  z-index: 1;
+  margin-left: -12px;
+}
+
+.arrow-bg {
+  font-size: 25px;
+  background-color: #2e2e2e;
+  opacity: 0.7;
+  border-radius: 50%;
   margin-right: 20px;
   margin-left: 6px;
+  height: 34px;
+  width: 34px;
 }
 
 #button {
@@ -441,7 +458,7 @@ tr:hover th span {
 .listeners,
 .verified,
 th,
-td{
+td {
   font-size: 13px;
   color: rgba(245, 245, 245, 0.493);
 }
@@ -460,4 +477,3 @@ td{
 .play-icon:hover {
   background-color: transparent;
 }
-
