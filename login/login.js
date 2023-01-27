@@ -22,7 +22,7 @@ function login(event) {
 function showError() {
     loginError.innerHTML = `
     <div class="alert alert-danger" role="alert">
-    <i class="bi bi-exclamation-diamond-fill"></i> Incorrect username or password.
+    <i class="bi bi-exclamation-diamond-fill"></i><span>sp</span>Incorrect username or password.
     </div>
     
     `
