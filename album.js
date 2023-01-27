@@ -111,10 +111,10 @@ function showTracks(tracks) {
     tr.classList.add("grey");
     tr.innerHTML = `
   
-    <td class="col-1 progressBar" scope="row"><i class="bi bi-play-fill fa-lg smallPlay "></i><span>${
+    <td class="col-1 progressBar number-head pt-3" scope="row"><i class="bi bi-play-fill fa-lg smallPlay"></i><span>${
       index + 1
     }</span></td>
-    <td class="col-9">
+    <td class="col-9" id="td-head">
     <p>${track.title}</p> <p class="text-muted" onclick="onClickArtist(${
       track.artist.id
     })">${track.artist.name}</p>
