@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet"  href="login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/spotify1.ico">
+
+    <title>Spotify</title>
+  </head>
+  <body>
+
+    <div>
+        <div class="d-flex justify-content-center">
+            <img src="../assets/Spotify_Logo.png" class="center"/>
+        </div>
+
+        <hr>
+
+    <div class="container justify-content-center">
+        <div class="row">
+            <div class="col-4"></div>
+
+            <div class="col-4">
+
+                <p class="font-weight-bold">To continue, log in to Spotify.</p>
+
+                <!--ADD ICONS TO BUTTONS-->
+                    <!--alert goes here-->
+                    <div id="loginError"></div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="fb-btn">
+                        <i class="bi bi-facebook"></i>
+                    <span class="btn-text ml-2">CONTINUE WITH FACEBOOK</span>
+                </button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" id="apl-btn">
+                    <i class="bi bi-apple"></i>   
+                    <span class="btn-text ml-2">CONTINUE WITH APPLE</span>
+                </button>
+
+                <!--HR OR LINE WITH OR BREAKPOINT-->
+                <h6><span>OR</span></h6>
+
+
+
+                <form id="loginForm">
+                    <div class="form-group">
+                    <label for="inputEmail"></label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email address or username">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                    <label for="inputPassword"></label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="form-check">
+                        <input type="checkbox" checked class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-success" id="log-btn">LOG IN</button>
+                    </div>
+                </form>
+
+                <a class="forgot-link" href="https://accounts.spotify.com/en/password-reset">Forgot your password?</a>
+
+                <hr class="my-4">
+
+                <h5 class="text-center">Don't have an account?</h5>
+
+                <button type="button" class="btn btn-light btn-lg btn-block border-dark text-muted" id="sign-up-btn">SIGN UP FOR SPOTIFY</button>
+
+                <hr>
+
+                <p class="footer-text text-muted">If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree with Spotify's <a href="https://www.spotify.com/uk/legal/end-user-agreement/">Terms & Conditions</a> and <a href="https://www.spotify.com/uk/legal/privacy-policy/">Privacy</a></p>
+     
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+    <script src="./login.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="normalise.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/spotify1.ico">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container-fluid page-wrapper">
+        <div class="row">
+            <div class="col-2  d-block row">
+
+                <div class="container-fluid d-block side-bar ">
+                    <img class="logo col-10 my-3 mt-4" src="/assets/Spotify_Logo.png" alt="">
+                    <button class="my-2 side-bar-text d-block align-items-center">
+                        <i class="bi bi-house-door-fill"></i>
+                        Home
+                    </button>
+                    <button class="my-2 side-bar-text side-bar-search d-block" onclick="searchBarVisible()">
+                        <i class="bi bi-search"></i>
+                        Search
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-music-note-list"></i>
+                        Your Library
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-plus-square-fill"></i>
+                        Create Playlist
+                    </button>
+                    <button class="my-2 side-bar-text d-block">
+                        <i class="bi bi-heart-fill"></i>
+                        Liked Songs
+                    </button>
+                    <hr>
+                    <button class="my-2 side-bar-text d-block align-items-center playlist">
+                        <i class="bi bi-file-earmark-music-fill"></i>
+                        Fara's Playlist
+                    </button>
+                    <button class="my-2 side-bar-text d-block align-items-center playlist">
+                        <i class="bi bi-file-earmark-music-fill"></i>
+                        Ben's Playlist
+                    </button>
+                    <button class="my-2 side-bar-text d-block align-items-center playlist">
+                        <i class="bi bi-file-earmark-music-fill"></i>
+                        Sam's Playlist
+                    </button>
+                    <button class="my-2 side-bar-text d-block align-items-center playlist">
+                        <i class="bi bi-file-earmark-music-fill"></i>
+                        Marius Playlist
+                    </button>
+                </div>
+            </div>
+            <div class="container-fluid col-10" id="container">
+                <div class="col-12 d-flex top-bar justify-content-between align-items-center mt-2 mb-3" id="header">
+                    <div class="topbar-btn-col row d-flex justify-content-between">
+                        <div class="col-1 d-flex align-items-center arrow-bg">
+                            <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i>
+                        </div>
+                        <div class="col-1 d-flex align-items-center arrow-bg">
+                            <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i>
+                        </div>
+                        <div class="search-bar row col ml-4">
+                            <div class="input-group flex-nowrap d-none" id="input">
+                                <!-- <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping">
+                                        <i class="bi bi-search"></i>
+                                    </span>
+                                </div> -->
+                                <input type="text" id="search-input" class="form-control rounded-pill"
+                                    placeholder="What do you want to listen to?" aria-label="Username"
+                                    aria-describedby="addon-wrapping">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topbar-user row ">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle rounded-pill text-white" id="button" type="button"
+                                data-toggle="dropdown"> <img class="user-img mr-2 ml-n2" src="/assets/avatar.png"
+                                    alt=""><span class="text-white mml-2">John Doe</span>
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu bg-dark ">
+                                <li><a class="text-white" href="#">Account</a></li>
+                                <li><a class="text-white" href="#">Profile</a></li>
+                                <li><a class="text-white" href="#">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid" id="good-morning-sec">
+                    <div class="row col-12 good-morning">
+                        <div class="col-12 d-flex ml-n3">
+                            <h3>Good Morning</h3>
+                        </div>
+                        <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6  good-morning-div" id="good-morning">
+                            <!-- <div class="col-2 p-0 good-morning-content d-flex align-items-center">
+                                <img class="col-5 pl-0 good-morning-img " src="/assets/avatar.png" alt="">
+                                <div>Singer</div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid mt-4 d-none" id="search-result-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline">Search Results</h4>
+                    </div>
+                    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5" id="search-result">
+                    </div>
+                </div>
+
+                <div class="container-fluid mt-4" id="recent-played-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline">Recently Played </h4><span
+                            class="text-muted text-end display-6 underline"
+                            onclick="showAll('recent-played-sec', 'pop')"><strong>SHOW ALL</strong> </span>
+                    </div>
+                    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5" id="recent-played">
+                    </div>
+                </div>
+                <div class="container-fluid mt-3" id="shows-to-try-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline">Shows to try</h4>
+                        <span class="text-muted text-end display-6 underline"
+                            onclick="showAll('shows-to-try-sec', 'podcasts')"><strong>SHOW ALL</strong> </span>
+                    </div>
+                    <span class="mb-3 text-muted mt-n2">Podcasts we think you'll got hokked on.</span>
+                    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5" id="shows-to-try">
+                    </div>
+                </div>
+                <div class="container-fluid mt-3" id="exclusives-sec">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 underline">Spotify Original & Exclusives</h4>
+                        <span class="text-muted text-end display-6 underline"
+                            onclick="showAll('exclusives-sec', 'mix')"><strong>SHOW ALL</strong> </span>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5" id="exclusives">
+                    </div>
+                </div>
+
+                <div class="container-fluid mt-5 mb-5">
+
+                </div>
+
+                <div class="container-fluid my-5">
+                    <footer class=" text-lg-start text-muted">
+                        <div class="container p-4 pb-0">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                                        Company
+                                    </h6>
+                                    <p>
+                                        Impressum
+                                    </p>
+                                    <p>About</p>
+                                    <p>Jobs</p>
+                                </div>
+                                <hr class="w-100 clearfix d-md-none" />
+                                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                                    <h6 class="text-uppercase mb-4 font-weight-bold">Communities</h6>
+                                    <p>
+                                        <a class="text-muted">For Artist</a>
+                                    </p>
+                                    <p>
+                                        <a class="text-muted">Developers</a>
+                                    </p>
+                                    <p>
+                                        <a class="text-muted">Advertising</a>
+                                    </p>
+                                    <p>
+                                        <a class="text-muted">Investors</a>
+                                    </p>
+                                </div>
+
+                                <hr class="w-100 clearfix d-md-none" />
+                                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                                        Useful links
+                                    </h6>
+                                    <p>
+                                        <a class="text-muted">Your Account</a>
+                                    </p>
+
+
+                                    <a class="text-muted">Help</a>
+                                    </p>
+                                </div>
+                                <hr class="w-100 clearfix d-md-none" />
+                                <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end mb-5">
+                                    <a class="btn btn-outline-light rounded-pill btn-floating m-1" class="text-white"
+                                        role="button"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light rounded-pill btn-floating m-1" class="text-white"
+                                        role="button"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light rounded-pill btn-floating m-1" class="text-white"
+                                        role="button"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            </section>
+
+                            <hr class="my-3">
+                            <section class="p-3 pt-0">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-md-7 col-lg-8 text-center text-md-start mb-5">
+                                        <div class="p-3">
+                                            © 2023 Copyright:
+                                            <a class="text-muted" href="#">Spotify AB</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </section>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 music-player">
+        <div class="song-bar">
+            <div class="song-infos">
+                <div class="image-container">
+                    <img id="album-art"
+                        src="https://d2y6mqrpjbqoe6.cloudfront.net/image/upload/f_auto,q_auto/media/library-400/216_636967437355378335Your_Lie_Small_hq.jpg"
+                        alt="" />
+                </div>
+                <div class="song-description">
+                    <p id="album-title" class="title">
+                        Watashitachi wa Sou Yatte Ikite Iku Jinshu na no
+                    </p>
+                    <p id="album-artist" class="artist">
+                        Masaru Yokoyama
+
+                    </p>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-compress"></i>
+            </div>
+        </div>
+        <div class="progress-controller">
+            <div class="control-buttons mt-4">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward" onclick="onClickPrev()"></i>
+                <i id="play-pause-btn" onclick="onPlayPause(event)" class="play-pause fas fa-play"></i>
+                <i class="fas fa-step-forward" onclick="onClickNext()"></i>
+                <i class="fas fa-undo-alt"></i>
+            </div>
+            <div class="progress-container mt-n4">
+                <span id="time-over">
+                    0:49
+                </span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span id="time-remaining">
+                    3:15
+                </span>
+            </div>
+        </div>
+        <div class="other-features">
+            <i class="fas fa-list-ul"></i>
+            <i class="fas fa-desktop"></i>
+            <div class="volume-bar">
+                <i class="fas fa-volume-down"></i>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

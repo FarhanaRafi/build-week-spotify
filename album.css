@@ -1,0 +1,499 @@
+body {
+  margin: 0;
+  color: white;
+  height: 100vh;
+}
+
+.page-wrapper{
+  flex-grow:1;
+    background: rgb(228, 62, 62);
+    background: linear-gradient(180deg, rgb(213, 49, 23) 0%, rgba(18,18,18,1) 18%);
+}
+.card {
+  border: none;
+  border-radius: 20px;
+}
+
+.card img {
+  padding: 7px;
+  background-color: rgb(27, 27, 27);
+}
+.card-body {
+  background-color: rgb(27, 27, 27);
+  /* background-color: rgb(19, 19, 19); */
+}
+.card :hover {
+  background-color: rgb(65, 64, 64);
+}
+.card :hover .card img {
+  background-color: rgb(65, 64, 64);
+}
+.card-title,
+.card-text,
+.good-morning-singer {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.side-bar {
+  background-color: black;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 85vh;
+}
+
+.side-bar-text {
+  background-color: black;
+  opacity: 0.5;
+  border: none;
+  color: white;
+}
+
+.side-bar i {
+  margin-right: 5px;
+  font-size: 25px;
+}
+
+.side-bar-text:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+hr {
+  background-color: rgba(245, 245, 245, 0.192);
+}
+
+#button {
+  height: 39px;
+  background-color: #2c2f32;
+}
+
+.top-bar {
+  background-color: transparent; 
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 8vh;
+}
+
+.top-bar{
+  transition:100ms ease;
+  background:transparent;
+}
+.top-bar.scrolled{
+  background-color: rgb(2,0,36);
+}
+
+.user-img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.good-morning-content {
+  background-color: rgb(27, 27, 27);
+}
+
+.music-player {
+  position: fixed;
+  bottom: 0;
+  --primary-color: #ddd;
+  --secondary-color: #999;
+  --green-color: #2d5;
+  --padding: 1em;
+  background-color: rgb(28, 27, 27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  padding: var(--padding);
+  color: var(--primary-color);
+  z-index: 1;
+}
+i {
+  color: var(--secondary-color);
+}
+i:hover {
+  color: var(--primary-color);
+}
+.song-bar {
+  position: absolute;
+  left: var(--padding);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  width: 25%;
+}
+
+.song-infos {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.image-container {
+  --size: 4.5em;
+  flex-shrink: 0;
+  width: var(--size);
+  height: var(--size);
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.song-description p {
+  margin: 0.2em;
+}
+.title,
+.artist {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.title:hover,
+.artist:hover {
+  text-decoration: underline;
+}
+.artist {
+  color: var(--secondary-color);
+}
+.icons {
+  display: flex;
+  gap: 1em;
+}
+.progress-controller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  color: var(--secondary-color);
+}
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.play-pause {
+  display: inline-block;
+  padding: 1em;
+  background-color: var(--primary-color);
+  color: #111;
+  border-radius: 50%;
+}
+.play-pause:hover {
+  transform: scale(1.1);
+  color: #111;
+}
+.progress-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.progress-bar {
+  height: 4px;
+  border-radius: 10px;
+  width: 30%;
+  background-color: #ccc4;
+}
+.progress {
+  position: relative;
+  height: 100%;
+  width: 30%;
+  border-radius: 10px;
+  /* background-color: var(--secondary-color); */
+}
+.progress-bar:hover .progress {
+  background-color: var(--green-color);
+}
+.progress-bar:hover .progress::after {
+  content: "";
+  position: absolute;
+  --size: 1em;
+  width: var(--size);
+  height: var(--size);
+  right: 0;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transform: translate(50%, calc(2px - 50%));
+}
+.other-features {
+  position: absolute;
+  right: var(--padding);
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+.volume-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.volume-bar .progress-bar {
+  width: 6em;
+}
+.volume-bar .progress-bar:hover .progress::after {
+  --size: 0.8em;
+}
+
+.underline:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.play-btn-container {
+  position: relative;
+  background-color: transparent;
+}
+.play-btn {
+  position: absolute;
+  font-size: 26px;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  background-color: transparent;
+}
+.card:hover .play-btn {
+  position: absolute;
+  font-size: 44px;
+  bottom: 0;
+  right: 0;
+  visibility: visible;
+  background-color: transparent;
+}
+
+.jumbotron{
+  background-color: transparent;
+  padding: 0;
+}
+.hero{
+ background-color: transparent;
+}
+
+
+
+tr{
+  color: white;
+}
+
+
+.createdFlex{
+  display: flex;
+  align-items: end;
+}
+
+
+#smallArtistIconPicture{
+  height: 1.8em;
+  border-radius: 50%;
+}
+
+.whatEver{
+  flex-flow: column;
+  justify-content: flex-end;
+}
+
+.everWhat{
+  align-content: flex-end;
+}
+
+.grey:hover{
+  background-color: #313131;
+
+}
+
+.bi-play-circle{
+  font-size: 3em;
+  color: green;
+}
+
+.bi-heart{
+  font-size: 1.5em;
+  padding: 20px;
+}
+
+#spotifyAlbumDetails{
+  margin-bottom: 30px;
+}
+
+
+.page-wrapper{
+  flex-grow:1;
+  background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 50%, rgba(46,23,40,1) 80%, rgba(166,58,134,1) 100%);
+}
+
+
+
+.table th {
+  padding-inline: 2em
+}
+
+.name-select:hover {
+  text-decoration: underline;
+}
+
+.coverAlbum:hover {
+transform: scale(1.2);
+border-radius: 20px;
+z-index: 1;
+}
+
+.table td {
+  padding-inline: 2rem;
+  line-height: 0.3em;
+
+}
+
+
+
+tr:hover {
+  background-color: #313131;
+
+
+}
+
+/* this should highlight the specific row of the song and change bg to a light grey color */
+
+.play-select i{
+  display: none;
+  margin-inline: 10px;
+}
+
+
+.name-select:hover {
+  text-decoration: underline;
+}
+
+
+.text-muted:hover{
+  text-decoration: underline;
+  cursor: pointer
+}
+
+#album-art img{
+  height: 4em;
+  width: 4em;
+}
+
+.play-btn-2 {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.play-btn-2:hover {
+  transform: scale(1.1);
+}
+
+.playlist {
+  font-size: 12px;
+}
+
+.playlist i {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 0.8em
+
+}
+
+h3{
+  font-size: 2.5em;
+font-weight: 700;
+}
+
+.artistNameTop{
+  font-weight: bold;
+}
+.artistNameTop:hover {
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+.table{
+  margin-bottom: 10rem
+}
+
+
+tr:first-of-type{
+ background-color: inherit
+}
+
+
+.volume-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.volume-bar .progress-bar {
+  width: 6em;
+}
+.volume-bar .progress-bar:hover .progress::after {
+  --size: 0.8em;
+}
+
+tr:hover {
+  cursor: pointer;
+}
+
+tr:hover .progressBar {
+  color:white
+}
+tr td i {
+  display: none;
+}
+
+tr:hover td i {
+  display: initial;
+}
+
+tr:hover td span {
+  display: none;
+}
+
+.arrow {
+  font-size: 22px;
+  cursor: pointer;
+  /* margin-right: 20px;
+  margin-left: 6px; */
+  z-index: 1;
+  margin-left: -12px;
+}
+
+#title-head {
+  padding-left: 0;
+}
+
+#td-head {
+  padding-left: 0;
+}
+
+.arrow-bg{
+  font-size: 25px;
+  background-color: #2e2e2e;
+  opacity: 0.7;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-left: 6px;
+  height: 34px;
+  width: 34px;
+}
+
+
+#search-input{
+  opacity: 0.4;
+  margin-left: -15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
