@@ -24,13 +24,13 @@ body {
   background-color: rgb(27, 27, 27);
 }
 
-.card :hover {
+.card:hover .card-body{
   background-color: rgb(65, 64, 64);
 }
 
-.card :hover .card img {
+/* .card img:hover .card {
   background-color: rgb(65, 64, 64);
-}
+} */
 
 .card-title,
 .card-text,
