@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet"  href="login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/spotify1.ico">
 
-    <title>Hello, world!</title>
+    <title>Spotify</title>
   </head>
   <body>
 
@@ -42,14 +43,14 @@
                 </button>
 
                 <!--HR OR LINE WITH OR BREAKPOINT-->
-                <h6 class="mt-4"><span>OR</span></h6>
+                <h6><span>OR</span></h6>
 
 
 
                 <form id="loginForm">
                     <div class="form-group">
                     <label for="inputEmail"></label>
-                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email or username">
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email address or username">
                     <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
@@ -58,27 +59,24 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" checked class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
                         <button type="submit" class="btn btn-success" id="log-btn">LOG IN</button>
                     </div>
                 </form>
 
-                <!-- <h5 class="mt-4 text-center mb-5">Forgot your password?</h5> -->
                 <a class="forgot-link" href="https://accounts.spotify.com/en/password-reset">Forgot your password?</a>
 
+                <hr class="my-4">
 
+                <h5 class="text-center">Don't have an account?</h5>
 
-                <hr>
-
-                <h5 class="text-center">Don't have an account</h5>
-
-                <button type="button" class="btn btn-light btn-lg btn-block border-dark">SIGN UP FOR SPOTIFY</button>
+                <button type="button" class="btn btn-light btn-lg btn-block border-dark text-muted" id="sign-up-btn">SIGN UP FOR SPOTIFY</button>
 
                 <hr>
 
-                <p class="footer-text text-muted">If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree with Spotify's <span>Terms & Conditions</span>and<span>Privacy</span></p>
+                <p class="footer-text text-muted">If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree with Spotify's <a href="https://www.spotify.com/uk/legal/end-user-agreement/">Terms & Conditions</a> and <a href="https://www.spotify.com/uk/legal/privacy-policy/">Privacy</a></p>
      
             </div>
             <div class="col-4"></div>
