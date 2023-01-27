@@ -83,20 +83,20 @@
              <div class="container col-10" id="container">
                 <div class="col-12 d-flex top-bar justify-content-between align-items-center mt-2 mb-3" id="header">
                     <div class="topbar-btn-col row d-flex justify-content-between">
-                        <div class="col-1 d-flex align-items-center">
+                        <div class="col-1 d-flex align-items-center arrow-bg">
                             <i class="bi bi-chevron-left arrow" onclick="loadSections()"></i>
                         </div>
-                        <div class="col-1 d-flex align-items-center">
+                        <div class="col-1 d-flex align-items-center arrow-bg">
                             <i class="bi bi-chevron-right arrow" onclick="loadSections()"></i>
                         </div>
                         <div class="search-bar row col ml-4">
                             <div class="input-group flex-nowrap d-none" id="input">
-                                <div class="input-group-prepend">
+                                <!-- <div class="input-group-prepend">
                                     <span class="input-group-text" id="addon-wrapping">
                                         <i class="bi bi-search"></i>
                                     </span>
-                                </div>
-                                <input type="text" id="search-input" class="form-control"
+                                </div> -->
+                                <input type="text" id="search-input" class="form-control rounded-pill"
                                     placeholder="What do you want to listen to?" aria-label="Username"
                                     aria-describedby="addon-wrapping">
                             </div>
@@ -106,7 +106,7 @@
                         <div class="dropdown">
                             <button class="btn dropdown-toggle rounded-pill text-white" id="button" type="button"
                                 data-toggle="dropdown"> <img class="user-img px-1 mr-2 ml-n2" src="/assets/avatar.png"
-                                    alt=""><span class="text-white mml-2">May</span>
+                                    alt=""><span class="text-white mml-2">John Doe</span>
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu bg-dark ">
                                 <li><a class="text-white" href="#">Action</a></li>
@@ -150,7 +150,7 @@
                                     <table class="table album_item table-borderless ">
                                         <thead>
                                             <th class="">#</th>
-                                            <th class="col-11">Title</th>
+                                            <th class="col-11" id="title-head">Title</th>
                                             <th ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
                                                 <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
