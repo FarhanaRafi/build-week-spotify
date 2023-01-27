@@ -224,3 +224,25 @@ const onPlayPause = (event) => {
     audioPlayer.pause();
   }
 };
+
+//to make search btn visible
+const searchBarVisible = () => {
+  document.getElementById("input").classList.remove("d-none");
+};
+
+//search musics
+const searchMusic = async () => {
+  let search = document.querySelector("#search-input").value;
+  if (search.length >= 4) {
+    sections.forEach((section) => {
+      document.getElementById(section).classList.add("d-none");
+    });
+    document.getElementById("search-result-sec").classList.remove("d-none");
+    let tracks = await getTrackDetails(search);
+    renderCards(tracks, "search-result", true, true);
+  }
+};
+
+document
+  .getElementById("search-input")
+  .addEventListener("keypress", searchMusic);
