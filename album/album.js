@@ -57,9 +57,9 @@ function showAlbumDetails(album) {
           <img id="smallArtistIconPicture" src="${album.artist.picture}"/>
         </div>
         <div class="mx-1">
-         <p class="artistNameTop" onclick="onClickArtist(${
-          album.artist.id
-        })">${album.artist.name}</p>
+         <p class="artistNameTop" onclick="onClickArtist(${album.artist.id})">${
+    album.artist.name
+  }</p>
         </div>
         <div class="mx-1">
           <p>&#8729 2018 &#8729</p>
@@ -67,10 +67,9 @@ function showAlbumDetails(album) {
         <div><p>${album.nb_tracks} Songs, </p>
         </div>
         <div class="mx-1">
-          <p>${Math.floor(album.duration / 3600)} hr ${
-            convertTime(album.duration)
-
-  } mins</p>
+          <p>${Math.floor(album.duration / 3600)} hr ${convertTime(
+    album.duration
+  )} mins</p>
         </div>
         </div>
       </div>
@@ -90,19 +89,17 @@ function showAlbumDetails(album) {
 }
 
 function convertTime(sec) {
-  var hours = Math.floor(sec/3600);
-  (hours >= 1) ? sec = sec - (hours * 3600) : hours = '00';
-  var min = Math.floor(sec/60);
-  (min >= 1) ? sec = sec - (min * 60) : min = '00';
-  (sec < 1) ? sec='00' : void 0;
+  var hours = Math.floor(sec / 3600);
+  hours >= 1 ? (sec = sec - hours * 3600) : (hours = "00");
+  var min = Math.floor(sec / 60);
+  min >= 1 ? (sec = sec - min * 60) : (min = "00");
+  sec < 1 ? (sec = "00") : void 0;
 
-  (min.toString().length == 1) ? min = '0'+min : void 0;
-  (sec.toString().length == 1) ? sec = '0'+sec : void 0;
+  min.toString().length == 1 ? (min = "0" + min) : void 0;
+  sec.toString().length == 1 ? (sec = "0" + sec) : void 0;
 
-  return min
+  return min;
 }
-
-
 
 function showTracks(tracks) {
   tracks.forEach((track, index) => {
@@ -143,7 +140,7 @@ function showTracks(tracks) {
   });
 }
 function onClickArtist(artistId) {
-  window.location.href = `./artist.html?id=${artistId}`;
+  window.location.href = `../artist/artist.html?id=${artistId}`;
 }
 
 const playPauseBtn = (event) => {
@@ -220,8 +217,6 @@ const formatTime = (duration) => {
 
   return `${minutes}:${seconds}`;
 };
-
-
 
 const searchBarVisible = () => {
   document.getElementById("input").classList.remove("d-none");
