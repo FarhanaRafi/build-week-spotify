@@ -150,7 +150,7 @@ const getSection = async (searchQuery, section, playable) => {
 //to album page
 const onCardClick = (event) => {
   let selectedAlbumId = event.target.closest(".card").id;
-  window.location.href = `./album.html?id=${selectedAlbumId}`;
+  window.location.href = `./album/album.html?id=${selectedAlbumId}`;
 };
 
 //load section
